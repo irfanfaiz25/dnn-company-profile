@@ -53,7 +53,7 @@ const Navbar = () => {
                 }`}
               >
                 <span className="text-[#E1B101]">DWIPA</span>
-                <span className="text-[#E41F29]">NUSANTARA</span>
+                <span className="text-[#e3333c]">NUSANTARA</span>
                 <span className="text-[#009B4A]">NIAGA</span>
               </h4>
             </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 <motion.li
                   key={index}
                   className={`relative text-base cursor-pointer font-medium ${
-                    isScrolled ? "text-gray-50" : "text-gray-50"
+                    isScrolled ? "text-gray-50" : "text-gray-800"
                   }`}
                   initial="rest"
                   whileHover="hover"
@@ -70,7 +70,7 @@ const Navbar = () => {
                 >
                   {item.name}
                   {item.name === "Beranda" ? (
-                    <div className="absolute -bottom-1 left-0 w-[30px] h-1 bg-primary-gold origin-left"></div>
+                    <div className="absolute -bottom-1 left-0 w-[30px] h-1 bg-primary-gold origin-left rounded-full"></div>
                   ) : (
                     <motion.div
                       variants={{
@@ -78,20 +78,24 @@ const Navbar = () => {
                         hover: { width: "30px" },
                       }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="absolute -bottom-1 left-0 h-1 bg-primary-gold origin-left"
+                      className="absolute -bottom-1 left-0 h-1 bg-primary-gold origin-left rounded-full"
                     />
                   )}
                 </motion.li>
               ))}
             </ul>
             <div className="flex justify-end items-center">
-              <button class="relative inline-flex items-center justify-start inline-block px-6 py-2.5 overflow-hidden font-medium rounded-full group curpo">
-                <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-primary-gold opacity-[3%]"></span>
-                <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-primary-gold opacity-100 group-hover:-translate-x-8"></span>
-                <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+              <button className="relative inline-flex items-center justify-start px-6 py-2.5 overflow-hidden font-medium rounded-full group curpo">
+                <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-primary-gold opacity-[3%]"></span>
+                <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-primary-gold opacity-100 group-hover:-translate-x-8"></span>
+                <span
+                  className={`relative w-full text-left  transition-colors duration-200 ease-in-out ${
+                    isScrolled ? "text-gray-50" : "text-gray-800"
+                  } group-hover:text-gray-900`}
+                >
                   Kontak Kami
                 </span>
-                <span class="absolute inset-0 border-2 border-primary-gold rounded-full"></span>
+                <span className="absolute inset-0 border-2 border-primary-gold rounded-full"></span>
               </button>
             </div>
           </div>
