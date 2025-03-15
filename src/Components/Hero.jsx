@@ -44,8 +44,8 @@ const Hero = () => {
           <div className="mx-auto text-center">
             <div className="text-wrap mx-auto animate-fade-in-up tracking-tight drop-shadow-lg hover:scale-105 transition-transform duration-300">
               <h1 className="text-6xl/19 text-gray-800 font-display font-bold">
-                Bukan Sekedar <span className="text-secondary">Kenikmatan</span>
-                ,
+                Bukan Sekedar{" "}
+                <span className="text-secondary-green">Kenikmatan</span>,
               </h1>
               <h1 className="text-6xl/19 text-gray-800 font-display font-bold">
                 Ini adalah{" "}
