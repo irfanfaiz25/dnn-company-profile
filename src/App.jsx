@@ -3,6 +3,7 @@ import "./App.css";
 import Hero from "./Components/Hero";
 import Navbar from "./Components/Navbar";
 import Sejarah from "./Components/Sejarah";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/sejarah" element={<Sejarah />} />
       </Routes>
+      <Footer />
     </>
   );
 }
