@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import Hero from "./Components/Hero";
+import Hero from "./Pages/Hero";
 import Navbar from "./Components/Navbar";
-import Sejarah from "./Components/Sejarah";
+import Sejarah from "./Pages/Sejarah";
 import Footer from "./Components/Footer";
 
 function App() {

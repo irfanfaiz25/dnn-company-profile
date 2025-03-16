@@ -8,6 +8,7 @@ const Sejarah = () => {
 
   return (
     <div className="w-full">
+      {/* Sejarah */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -78,6 +79,7 @@ const Sejarah = () => {
         </motion.p>
       </motion.div>
 
+      {/* visi dan misi */}
       <motion.div
         className="h-fit w-full section-background px-24 py-20"
         initial={{ opacity: 0 }}

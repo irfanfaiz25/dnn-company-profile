@@ -32,17 +32,17 @@ const Navbar = () => {
           url: "/sejarah",
         },
         {
-          name: "Visi dan Misi",
-          url: "/visi-misi",
+          name: "Tim Manajemen",
+          url: "/tim-manajemen",
         },
       ],
     },
     {
-      name: "Produk Kami",
+      name: "Produk",
       url: "/produk-kami",
     },
     {
-      name: "Bisnis Kami",
+      name: "Bisnis",
       url: "/bisnis-kami",
     },
   ];
@@ -52,11 +52,11 @@ const Navbar = () => {
       <motion.div
         animate={{
           backgroundColor: isScrolled
-            ? "rgb(30, 32, 30 / 0.7)"
+            ? "rgb(23,23,23 / 0.8)"
             : "rgba(255, 255, 255, 0)",
         }}
         transition={{ duration: 0.3 }}
-        className={`${isScrolled ? "backdrop-blur-md" : ""}`}
+        className={`${isScrolled ? "backdrop-blur-sm" : ""}`}
       >
         <div className="mx-auto px-24 w-full">
           <div className="grid grid-cols-3 w-full h-[5rem] items-center">
@@ -108,8 +108,9 @@ const Navbar = () => {
                         )}
                       </motion.div>
 
-                      <div className="absolute right-0 hidden pt-2 group-hover:block">
-                        <div className="bg-white rounded-md shadow-lg overflow-hidden">
+                      {/* submenu */}
+                      <div className="absolute top-12 right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <div className="bg-white rounded-md shadow-lg overflow-hidden p-1 space-y-1">
                           {item.submenu.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
@@ -118,13 +119,7 @@ const Navbar = () => {
                                 location.pathname === subItem.url
                                   ? "bg-primary-gold"
                                   : "hover:bg-primary-gold"
-                              }  whitespace-nowrap transition-colors duration-200 ${
-                                subIndex === 0 ? "rounded-t-md" : ""
-                              } ${
-                                subIndex === item.submenu.length - 1
-                                  ? "rounded-b-md"
-                                  : ""
-                              }`}
+                              }  whitespace-nowrap transition-colors duration-200 rounded-md`}
                             >
                               {subItem.name}
                             </Link>

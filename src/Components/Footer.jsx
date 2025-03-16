@@ -3,7 +3,7 @@ import Logo from "../assets/img/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-gray-300">
+    <footer className="bg-neutral-900/80 backdrop-blur-md text-gray-300">
       <div className="mx-auto px-24 py-16">
         <div className="grid grid-cols-4 gap-8 mb-12">
           <motion.div
