@@ -32,7 +32,7 @@ const Navbar = () => {
           url: "/sejarah",
         },
         {
-          name: "Tim Manajemen",
+          name: "Tim & Manajemen",
           url: "/tim-manajemen",
         },
       ],
