@@ -1,12 +1,19 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
 import Hero from "./Pages/Hero";
 import Navbar from "./Components/Navbar";
 import Sejarah from "./Pages/Sejarah";
 import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <Navbar />

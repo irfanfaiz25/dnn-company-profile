@@ -3,9 +3,10 @@ import Logo from "../assets/img/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900/80 backdrop-blur-md text-gray-300">
-      <div className="mx-auto px-24 py-16">
-        <div className="grid grid-cols-4 gap-8 mb-12">
+    <footer className="bg-neutral-900/90 backdrop-blur-md text-gray-300">
+      <div className="mx-auto px-4 md:px-8 lg:px-24 py-8 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-12">
+          {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -13,8 +14,8 @@ const Footer = () => {
             className="space-y-4"
           >
             <div className="flex items-center gap-3">
-              <img src={Logo} alt="logo" className="h-10" />
-              <h4 className="text-xl font-header font-semibold space-x-1">
+              <img src={Logo} alt="logo" className="h-8 md:h-10" />
+              <h4 className="text-lg md:text-xl font-header font-semibold space-x-1">
                 <span className="text-[#E1B101]">DWIPA</span>
                 <span className="text-[#e3333c]">NUSANTARA</span>
                 <span className="text-[#009B4A]">NIAGA</span>
@@ -26,13 +27,16 @@ const Footer = () => {
             </p>
           </motion.div>
 
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-4"
           >
-            <h5 className="text-lg font-semibold text-white">Kontak</h5>
+            <h5 className="text-base md:text-lg font-semibold text-white">
+              Kontak
+            </h5>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 hover:text-primary-gold transition-colors">
                 <svg
@@ -58,13 +62,16 @@ const Footer = () => {
             </ul>
           </motion.div>
 
+          {/* Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="space-y-4"
           >
-            <h5 className="text-lg font-semibold text-white">Tautan</h5>
+            <h5 className="text-base md:text-lg font-semibold text-white">
+              Tautan
+            </h5>
             <ul className="space-y-3 text-sm">
               <li className="hover:text-primary-gold transition-colors">
                 <a href="/sejarah">Sejarah Perusahaan</a>
@@ -78,20 +85,23 @@ const Footer = () => {
             </ul>
           </motion.div>
 
+          {/* Social Media */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="space-y-4"
           >
-            <h5 className="text-lg font-semibold text-white">Ikuti Kami</h5>
-            <div className="flex gap-4">
+            <h5 className="text-base md:text-lg font-semibold text-white">
+              Ikuti Kami
+            </h5>
+            <div className="flex gap-3 md:gap-4">
               {["facebook", "twitter", "instagram", "linkedin"].map(
                 (social, index) => (
                   <a
                     key={social}
                     href={`#${social}`}
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-gold transition-colors"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-gold transition-colors"
                   >
                     <span className="sr-only">{social}</span>
                     {/* Add social media icons here */}
@@ -102,13 +112,14 @@ const Footer = () => {
           </motion.div>
         </div>
 
+        {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="pt-8 border-t border-gray-800"
+          className="pt-6 md:pt-8 border-t border-gray-500"
         >
-          <p className="text-sm text-center text-gray-400">
+          <p className="text-xs md:text-sm text-center text-primary-gold">
             © {new Date().getFullYear()} PT Dwipa Nusantara Niaga. All rights
             reserved.
           </p>
