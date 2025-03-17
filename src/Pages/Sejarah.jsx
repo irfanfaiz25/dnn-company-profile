@@ -86,9 +86,23 @@ const Sejarah = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl font-semibold text-gray-800 text-center mb-12">
-          Visi & Misi Perusahaan
-        </h2>
+        <div className="flex flex-col items-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl font-display font-bold text-center text-gray-800"
+          >
+            Visi & Misi
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-24 h-1.5 bg-primary-gold mt-5 mb-24 rounded-full"
+            style={{ originX: 0.5 }}
+          />
+        </div>
         <div className="grid grid-cols-2 gap-10">
           <motion.div
             className="w-full p-10 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"

@@ -222,20 +222,29 @@ const TimManajemen = () => {
         </div>
 
         <div className="container mx-auto mt-10 h-[500px] flex flex-col justify-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl font-display font-bold text-center text-gray-800 mb-12"
-          >
-            Pencapaian Kami
-          </motion.h2>
+          <div className="flex flex-col items-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl font-display font-bold text-center text-gray-800"
+            >
+              Pencapaian Kami
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="w-24 h-1.5 bg-secondary-green mt-5 mb-24 rounded-full"
+              style={{ originX: 0.5 }}
+            />
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="mt-8 px-24 grid grid-cols-3 gap-8"
+            className="px-24 grid grid-cols-3 gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -268,7 +277,9 @@ const TimManajemen = () => {
                       transition={{ duration: 0.5, delay: stat.delay + 0.2 }}
                     >
                       <Counter from={0} to={stat.count} duration={2} />
-                      {stat.suffix || "+"}
+                      {stat.label === "Pertumbuhan"
+                        ? stat.suffix || "%"
+                        : stat.suffix || "+"}
                     </motion.h1>
                     <motion.p
                       className="text-lg font-medium text-gray-600"
@@ -290,15 +301,23 @@ const TimManajemen = () => {
       </div>
 
       <div className="mx-auto px-24 py-16 min-h-[600px] section-background">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-display font-bold text-center text-gray-800 mb-16"
-        >
-          Cerita Kami
-        </motion.h2>
+        <div className="flex flex-col items-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl font-display font-bold text-center text-gray-800"
+          >
+            Cerita Kami
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-24 h-1.5 bg-primary-gold mt-5 mb-24 rounded-full"
+            style={{ originX: 0.5 }}
+          />
+        </div>
 
         <div className="relative">
           {/* Decorative elements */}
