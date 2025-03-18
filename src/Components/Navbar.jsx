@@ -51,7 +51,7 @@ const Navbar = () => {
     },
     {
       name: "Produk",
-      url: "/produk-kami",
+      url: "/produk",
     },
     {
       name: "Bisnis",
@@ -136,7 +136,8 @@ const Navbar = () => {
                       <div className="relative">
                         <motion.div
                           className={`flex items-center gap-1 text-base cursor-pointer font-medium ${
-                            location.pathname === "/sejarah"
+                            location.pathname === "/sejarah" ||
+                            location.pathname === "/produk"
                               ? "text-gray-50"
                               : isScrolled
                               ? "text-gray-50"
@@ -188,7 +189,8 @@ const Navbar = () => {
                       <Link to={item.url}>
                         <motion.div
                           className={`relative text-base cursor-pointer font-medium ${
-                            location.pathname === "/sejarah"
+                            location.pathname === "/sejarah" ||
+                            location.pathname === "/produk"
                               ? "text-gray-50"
                               : isScrolled
                               ? "text-gray-50"
@@ -224,7 +226,8 @@ const Navbar = () => {
                   <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-primary-gold opacity-100 group-hover:-translate-x-8"></span>
                   <span
                     className={`relative w-full text-left transition-colors duration-200 ease-in-out ${
-                      location.pathname === "/sejarah"
+                      location.pathname === "/sejarah" ||
+                      location.pathname === "/produk"
                         ? "text-gray-50"
                         : isScrolled
                         ? "text-gray-50"

@@ -1,0 +1,324 @@
+import { motion, useScroll, useTransform } from "motion/react";
+import Background from "../assets/img/tobacco-leaf.jpg";
+import PackKedhaton from "../assets/img/pack-kedhaton.png";
+import PackMataram from "../assets/img/pack-mataram.png";
+import PackDinasti from "../assets/img/pack-dinasti.png";
+import DetailKedhaton from "../assets/img/detail-kedhaton.png";
+import DetailMataram from "../assets/img/detail-mataram.png";
+import DetailDinasti from "../assets/img/detail-dinasti.png";
+import { useRef, useState } from "react";
+import { CircleArrowUp } from "lucide-react";
+
+const Produk = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 270]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const detailRefs = useRef([]);
+
+  const handleProductClick = (productId) => {
+    setSelectedProduct(productId);
+    const index = products.findIndex((p) => p.id === productId);
+    const targetElement = detailRefs.current[index];
+
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const startPosition = window.pageYOffset;
+      const distance = elementPosition;
+      const duration = 2000; // Increased duration (in ms) for slower scroll
+      let start = null;
+
+      const animation = (currentTime) => {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // Easing function for smoother animation
+        const easeInOutCubic = (progress) => {
+          return progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        };
+
+        window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      };
+
+      requestAnimationFrame(animation);
+    }
+  };
+
+  const handleBackToProducts = () => {
+    const productsSection = document.querySelector(".products-grid-section");
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setSelectedProduct(null);
+  };
+
+  const products = [
+    {
+      id: 1,
+      name: "Mataram Nusantara",
+      series: "Premium Blend",
+      stock: "In Stock",
+      description:
+        "Kedhaton Nusantara merupakan manifestasi dari keanggunan cita rasa klasik yang dipadukan dengan sentuhan modernitas. Diproduksi secara eksklusif dengan tembakau pilihan dari lembah-lembah subur Nusantara, setiap batang merupakan hasil kurasi yang ketat dan proses pemeraman yang sempurna.",
+      details: {
+        blend: "Premium Virginia & Oriental",
+        characteristic: "Medium Bodied, Smooth",
+        aroma: "Floral dengan Hint Kayu Manis",
+        packaging: "16 Batang Premium",
+      },
+      image: DetailMataram,
+      packImage: PackMataram,
+      bgColor: "bg-white",
+    },
+    {
+      id: 2,
+      name: "Kedhaton Nusantara",
+      series: "Signature Series",
+      stock: "In Stock",
+      description:
+        "Kedhaton Nusantara adalah perwujudan sempurna dari warisan rasa tradisional yang dibalut dalam kemewahan modern. Setiap batang menghadirkan pengalaman merokok yang tak tertandingi, hasil dari seleksi tembakau terbaik dan proses produksi yang mengutamakan kualitas premium.",
+      details: {
+        blend: "Premium Virginia & Oriental Blend",
+        characteristic: "Full Bodied, Rich",
+        aroma: "Woody dengan Hint Vanilla",
+        packaging: "16 Batang Premium",
+      },
+      image: DetailKedhaton,
+      packImage: PackKedhaton,
+      bgColor: "bg-gradient-to-br from-primary-gold via-yellow-100 to-white",
+    },
+    {
+      id: 3,
+      name: "Dinasti Nusantara",
+      series: "Limited Edition",
+      stock: "In Stock",
+      description:
+        "Dinasti Nusantara merupakan karya istimewa yang menggabungkan keagungan rasa klasik dengan inovasi modern. Diproduksi dalam jumlah terbatas, setiap batang menawarkan pengalaman eksklusif dengan tembakau pilihan yang diproses menggunakan teknik tradisional yang telah disempurnakan.",
+      details: {
+        blend: "Special Virginia & Oriental Selection",
+        characteristic: "Full Bodied, Complex",
+        aroma: "Spicy dengan Hint Karamel",
+        packaging: "16 Batang Premium",
+      },
+      image: DetailDinasti,
+      packImage: PackDinasti,
+      bgColor: "bg-white",
+    },
+  ];
+
+  return (
+    <div className="w-full">
+      {/* Sejarah */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="w-full h-screen relative"
+      >
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          src={Background}
+          className="w-full h-full object-cover"
+          alt="background image"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="w-full h-full absolute top-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent"
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          style={{ y, opacity }}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <h1 className="text-6xl text-gray-50 font-bold font-display text-center">
+            Produk Kami
+          </h1>
+          <p className="mt-2 text-lg/7 text-gray-200 font-normal text-center">
+            Tembakau, bahan utama dalam produk kami, adalah warisan leluhur yang
+            telah menemani perjalanan peradaban sejak zaman kerajaan nusantara.
+            Dengan kandungan senyawa alami yang memikat, tembakau kami dipilih
+            dari varietas terbaik dan diproses dengan keahlian tradisional yang
+            dipadukan teknologi modern untuk menghasilkan produk premium yang
+            tak tertandingi.
+          </p>
+        </motion.div>
+      </motion.div>
+
+      <div className="min-h-screen p-24 bg-gradient-to-br from-white via-yellow-50 to-primary-gold overflow-hidden relative products-grid-section">
+        <div className="flex flex-col items-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl font-display font-bold text-center text-gray-800"
+          >
+            Produk Kami
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-24 h-1.5 bg-primary-gold mt-5 mb-24 rounded-full"
+            style={{ originX: 0.5 }}
+          />
+        </div>
+
+        <div className="mt-10 relative">
+          {/* Products Grid */}
+          <div className="grid grid-cols-3 gap-16 w-full px-24">
+            {products.map((product, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ y: -20 }}
+              >
+                <div className="w-full h-[500px] bg-gradient-to-br from-primary-gold/30 via-primary-gold/20 to-transparent backdrop-blur-sm rounded-3xl relative flex flex-col items-center justify-end pb-20 overflow-hidden">
+                  <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <motion.img
+                    src={product.packImage}
+                    alt={product.name}
+                    className="absolute top-2 w-[12rem] group-hover:scale-110 transition-transform duration-500"
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.3 }}
+                  />
+                  <motion.div
+                    className="text-center z-10 mt-8"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    <h2 className="text-3xl font-bold font-display text-gray-800 group-hover:text-primary-gold transition-colors duration-300">
+                      {product.name}
+                    </h2>
+                    <p className="text-gray-200 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {product.series}
+                    </p>
+                  </motion.div>
+                </div>
+
+                <motion.button
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-800 px-5 py-2.5 rounded-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleProductClick(product.id)}
+                >
+                  Lebih Lanjut
+                </motion.button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Detail Product */}
+      {products.map((product, index) => (
+        <div
+          key={index}
+          ref={(el) => (detailRefs.current[index] = el)}
+          className={`w-full h-[700px] ${
+            selectedProduct === product.id
+              ? "bg-gradient-to-br from-primary-gold via-yellow-100 to-white"
+              : "bg-white"
+          } flex items-center justify-center px-24 transition-all duration-500 ${
+            selectedProduct === product.id ? "opacity-100" : "opacity-70"
+          }`}
+        >
+          {selectedProduct === product.id && (
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              onClick={handleBackToProducts}
+              className="fixed bottom-8 right-8 bg-primary-gold text-gray-800 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
+            >
+              <CircleArrowUp />
+              Kembali ke Produk
+            </motion.button>
+          )}
+          <motion.div
+            className={`flex flex-col lg:flex-row${
+              index % 2 === 1 ? "-reverse" : ""
+            } gap-12 max-w-7xl mx-auto`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div className="lg:w-1/2 relative group hover:scale-105 transition-transform duration-1000">
+              <motion.img
+                src={product.image}
+                className="w-full h-[470px] object-cover rounded-3xl shadow-2xl"
+                alt={`${product.name} Detail`}
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            </motion.div>
+
+            <div className="lg:w-1/2 space-y-8">
+              <motion.div
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className="text-5xl font-bold font-display text-gray-800 mb-4">
+                  {product.name}
+                </h1>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium">
+                    {product.series}
+                  </span>
+                  <span className="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium">
+                    {product.stock}
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4 }}
+              >
+                <p className="text-lg/8 font-normal text-gray-600">
+                  {product.description}
+                </p>
+
+                <div className="grid grid-cols-2 gap-6 pt-6">
+                  {Object.entries(product.details).map(([key, value]) => (
+                    <div key={key} className="space-y-2">
+                      <h3 className="text-gray-400 text-sm font-medium">
+                        {key.toUpperCase()}
+                      </h3>
+                      <p className="text-gray-800 font-medium">{value}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Produk;

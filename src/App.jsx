@@ -6,6 +6,7 @@ import Sejarah from "./Pages/Sejarah";
 import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen";
 import { useEffect } from "react";
+import Produk from "./Pages/Produk";
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/sejarah" element={<Sejarah />} />
         <Route path="/tim-manajemen" element={<TimManajemen />} />
+        <Route path="/produk" element={<Produk />} />
       </Routes>
       <Footer />
     </>
