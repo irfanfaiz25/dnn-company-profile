@@ -247,7 +247,7 @@ const Produk = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               onClick={handleBackToProducts}
-              className="fixed bottom-8 right-8 bg-primary-gold text-gray-800 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
+              className="fixed bottom-75 right-8 bg-primary-gold text-gray-800 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
             >
               <CircleArrowUp />
               Kembali ke Produk
