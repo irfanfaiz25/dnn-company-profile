@@ -1,7 +1,35 @@
 import { motion } from "framer-motion";
 import Logo from "../assets/img/logo.png";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router";
 
 const Footer = () => {
+  const socials = [
+    {
+      id: 1,
+      name: "facebook",
+      url: "#facebook",
+      icon: <Facebook />,
+    },
+    {
+      id: 2,
+      name: "twitter",
+      url: "#twitter",
+      icon: <Twitter />,
+    },
+    {
+      id: 3,
+      name: "instagram",
+      url: "#instagram",
+      icon: <Instagram />,
+    },
+    {
+      id: 4,
+      name: "linkedin",
+      url: "#linkedin",
+      icon: <Linkedin />,
+    },
+  ];
   return (
     <footer className="bg-neutral-900/90 backdrop-blur-md text-gray-300">
       <div className="mx-auto px-4 md:px-8 lg:px-24 py-8 md:py-16">
@@ -22,8 +50,8 @@ const Footer = () => {
               </h4>
             </div>
             <p className="text-sm text-gray-400">
-              Menjadi mitra terpercaya dalam perdagangan dan distribusi di
-              Indonesia.
+              Menjadi mitra terpercaya dalam perdagangan dan distribusi produk
+              tembakau di Indonesia.
             </p>
           </motion.div>
 
@@ -47,7 +75,9 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span>info@dwipanusantara.com</span>
+                <a href="mailto:info@dwipanusantara.com">
+                  info@dwipanusantara.id
+                </a>
               </li>
               <li className="flex items-center gap-2 hover:text-primary-gold transition-colors">
                 <svg
@@ -57,7 +87,7 @@ const Footer = () => {
                 >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span>+62 123 4567 890</span>
+                <a href="tel:+6221234567890">+62 123 4567 890</a>
               </li>
             </ul>
           </motion.div>
@@ -74,13 +104,18 @@ const Footer = () => {
             </h5>
             <ul className="space-y-3 text-sm">
               <li className="hover:text-primary-gold transition-colors">
-                <a href="/sejarah">Sejarah Perusahaan</a>
+                <Link to="/sejarah">Sejarah Perusahaan</Link>
               </li>
               <li className="hover:text-primary-gold transition-colors">
-                <a href="/visi-misi">Visi dan Misi</a>
+                <Link to="/tim-manajemen">Tim & Manajemen</Link>
               </li>
               <li className="hover:text-primary-gold transition-colors">
-                <a href="/produk-kami">Produk Kami</a>
+                <Link href="/produk">Produk Kami</Link>
+              </li>
+              <li className="hover:text-primary-gold transition-colors">
+                <Link href="/revolusi-dalam-sorotan">
+                  Revolusi Dalam Sorotan
+                </Link>
               </li>
             </ul>
           </motion.div>
@@ -96,18 +131,16 @@ const Footer = () => {
               Ikuti Kami
             </h5>
             <div className="flex gap-3 md:gap-4">
-              {["facebook", "twitter", "instagram", "linkedin"].map(
-                (social, index) => (
-                  <a
-                    key={social}
-                    href={`#${social}`}
-                    className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-gold transition-colors"
-                  >
-                    <span className="sr-only">{social}</span>
-                    {/* Add social media icons here */}
-                  </a>
-                )
-              )}
+              {socials.map((social, index) => (
+                <a
+                  key={index}
+                  href={`${social.url}`}
+                  className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-neutral-800 flex items-center justify-center hover:text-primary-gold transition-colors duration-500"
+                >
+                  <span className="sr-only">{social.name}</span>
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>

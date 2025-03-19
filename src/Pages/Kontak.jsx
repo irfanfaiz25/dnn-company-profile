@@ -102,7 +102,7 @@ const Kontak = () => {
             </div>
             <h3 className="font-semibold text-gray-900 mb-1">Alamat Email</h3>
             <a
-              href="mailto:info@dwipanusantara.com"
+              href="mailto:info@dwipanusantara.id"
               className="text-gray-600 text-sm hover:text-red-500"
             >
               info@dwipanusantaraniaga.id
