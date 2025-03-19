@@ -54,8 +54,8 @@ const Navbar = () => {
       url: "/produk",
     },
     {
-      name: "Kontak Kami",
-      url: "/kontak-kami",
+      name: "Kontak",
+      url: "/kontak",
     },
   ];
 

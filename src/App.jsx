@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Produk from "./Pages/Produk";
 import Sorotan from "./Pages/Sorotan";
 import SorotanDetail from "./Pages/SorotanDetail";
+import Kontak from "./Pages/Kontak";
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/sejarah" element={<Sejarah />} />
         <Route path="/tim-manajemen" element={<TimManajemen />} />
         <Route path="/produk" element={<Produk />} />
+        <Route path="/kontak" element={<Kontak />} />
         <Route path="/revolusi-dalam-sorotan" element={<Sorotan />} />
         <Route
           path="/revolusi-dalam-sorotan/:slug"
