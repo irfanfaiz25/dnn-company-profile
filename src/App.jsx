@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
-import Beranda from "./Pages/Beranda";
+import Beranda from "./Pages/Beranda/Beranda";
 import Navbar from "./Components/Navbar";
 import Sejarah from "./Pages/Sejarah";
 import Footer from "./Components/Footer";
