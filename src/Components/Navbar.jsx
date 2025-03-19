@@ -225,7 +225,10 @@ const Navbar = () => {
                   ))}
                 </ul>
                 <div className="flex items-center justify-end">
-                  <button className="relative inline-flex items-center justify-center p-4 px-6 py-2.5 overflow-hidden font-medium text-gray-50 transition duration-300 ease-out border-2 border-primary-gold rounded-full shadow-md group">
+                  <Link
+                    to="/revolusi-dalam-sorotan"
+                    className="relative inline-flex items-center justify-center p-4 px-6 py-2.5 overflow-hidden font-medium text-gray-50 transition duration-300 ease-out border-2 border-primary-gold rounded-full shadow-md group"
+                  >
                     <span className="absolute inset-0 flex items-center justify-center w-full h-full text-gray-800 duration-300 -translate-x-full bg-primary-gold border-primary-gold group-hover:translate-x-0 ease">
                       <svg
                         className="w-6 h-6"
@@ -235,9 +238,9 @@ const Navbar = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M14 5l7 7m0 0l-7 7m7-7H3"
                         ></path>
                       </svg>
@@ -257,7 +260,7 @@ const Navbar = () => {
                     <span className="relative invisible">
                       Revolusi Dalam Sorotan
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

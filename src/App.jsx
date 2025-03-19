@@ -7,6 +7,8 @@ import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen";
 import { useEffect } from "react";
 import Produk from "./Pages/Produk";
+import Sorotan from "./Pages/Sorotan";
+import SorotanDetail from "./Pages/SorotanDetail";
 
 function App() {
   const location = useLocation();
@@ -23,6 +25,11 @@ function App() {
         <Route path="/sejarah" element={<Sejarah />} />
         <Route path="/tim-manajemen" element={<TimManajemen />} />
         <Route path="/produk" element={<Produk />} />
+        <Route path="/revolusi-dalam-sorotan" element={<Sorotan />} />
+        <Route
+          path="/revolusi-dalam-sorotan/:slug"
+          element={<SorotanDetail />}
+        />
       </Routes>
       <Footer />
     </>
