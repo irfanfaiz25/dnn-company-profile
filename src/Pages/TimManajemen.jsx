@@ -8,7 +8,7 @@ const TimManajemen = () => {
   const teams = [
     {
       id: 1,
-      name: "Alexander Gophel",
+      name: "Budi Santoso",
       position: "Business Management",
       image: Profile1,
       description:
@@ -16,7 +16,7 @@ const TimManajemen = () => {
     },
     {
       id: 2,
-      name: "Jane Doe",
+      name: "Rani Aprilia",
       position: "Operational Manager",
       image: Profile2,
       description:
@@ -24,7 +24,7 @@ const TimManajemen = () => {
     },
     {
       id: 3,
-      name: "John Smith",
+      name: "Rendi Irwansyah",
       position: "Financial Analyst",
       image: Profile1,
       description:
@@ -32,7 +32,7 @@ const TimManajemen = () => {
     },
     {
       id: 4,
-      name: "Sarah Johnson",
+      name: "Sinta Sari",
       position: "Marketing Specialist",
       image: Profile2,
       description:
@@ -264,7 +264,7 @@ const TimManajemen = () => {
               initial={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-24 h-1.5 bg-secondary-green mt-5 mb-24 rounded-full"
+              className="w-24 h-1.5 bg-primary-gold mt-5 mb-24 rounded-full"
               style={{ originX: 0.5 }}
             />
           </div>
@@ -343,7 +343,7 @@ const TimManajemen = () => {
               initial={{ opacity: 0, scaleX: 0 }}
               whileInView={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-24 h-1.5 bg-secondary-green mt-5 rounded-full"
+              className="w-24 h-1.5 bg-primary-gold mt-5 rounded-full"
               style={{ originX: 0.5 }}
             />
           </div>

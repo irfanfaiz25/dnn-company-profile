@@ -133,13 +133,13 @@ const SorotanDetail = () => {
 
         {/* Buttons */}
         <div className="flex justify-start mt-8">
-          <Link
-            to="/revolusi-dalam-sorotan"
+          <button
+            onClick={() => window.history.back()}
             className="flex items-center gap-2 px-6 py-3 bg-primary-gold hover:bg-yellow-600 text-white rounded-md transition-colors duration-200"
           >
             <ChevronLeftCircle className="w-5 h-5" />
             Kembali
-          </Link>
+          </button>
         </div>
       </motion.div>
     </div>

@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
-import Hero from "./Pages/Hero";
+import Beranda from "./Pages/Beranda";
 import Navbar from "./Components/Navbar";
 import Sejarah from "./Pages/Sejarah";
 import Footer from "./Components/Footer";
@@ -22,7 +22,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Beranda />} />
         <Route path="/sejarah" element={<Sejarah />} />
         <Route path="/tim-manajemen" element={<TimManajemen />} />
         <Route path="/produk" element={<Produk />} />

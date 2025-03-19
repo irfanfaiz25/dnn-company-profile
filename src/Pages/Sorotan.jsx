@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 import NewsBackground from "../assets/img/news-background.jpg";
 import { Posts } from "../assets/data/Posts";
+import { ChevronRight } from "lucide-react";
 
 const Sorotan = () => {
   const limitText = (text, limit) => {
@@ -95,9 +96,10 @@ const Sorotan = () => {
               <div className="flex w-full justify-start">
                 <Link
                   to={`/revolusi-dalam-sorotan/${post.slug}`}
-                  className="px-8 py-3 text-base font-semibold bg-primary-gold text-gray-800 rounded-full hover:scale-105 transition-all duration-500"
+                  className="text-gray-500 font-semibold hover:text-primary-gold transition-colors duration-300 flex items-center gap-2"
                 >
-                  Selengkapnya
+                  Baca Selengkapnya
+                  <ChevronRight />
                 </Link>
               </div>
             </motion.div>
