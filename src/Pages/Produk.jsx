@@ -254,8 +254,8 @@ const Produk = () => {
             </motion.button>
           )}
           <motion.div
-            className={`flex flex-col lg:flex-row${
-              index % 2 === 1 ? "-reverse" : ""
+            className={`flex flex-col md:flex-row ${
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
             } gap-12 max-w-7xl mx-auto`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
