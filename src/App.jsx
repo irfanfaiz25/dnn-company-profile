@@ -1,10 +1,10 @@
 import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
-import Beranda from "./Pages/Beranda/Beranda";
+import Beranda from "./Pages/Beranda/Index";
 import Navbar from "./Components/Navbar";
-import Sejarah from "./Pages/Sejarah/Sejarah";
+import Sejarah from "./Pages/Sejarah/Index";
 import Footer from "./Components/Footer";
-import TimManajemen from "./Pages/TimManajemen";
+import TimManajemen from "./Pages/TimManajemen/Index";
 import { useEffect } from "react";
 import Produk from "./Pages/Produk";
 import Sorotan from "./Pages/Sorotan";

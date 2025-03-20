@@ -91,7 +91,7 @@ const Sejarah = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl font-display font-bold text-center text-gray-800"
+            className="text-3xl md:text-4xl font-display font-bold text-center text-gray-800"
           >
             Visi & Misi
           </motion.h2>
