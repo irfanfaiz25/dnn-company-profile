@@ -216,7 +216,7 @@ const Produk = () => {
                 </div>
 
                 <motion.button
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-800 px-5 py-2.5 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-50 px-5 py-2.5 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleProductClick(product.id)}
