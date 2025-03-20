@@ -99,7 +99,7 @@ const Hero = () => {
                 }}
                 className="text-6xl/19 text-gray-800 font-display font-bold"
               >
-                Bukan Sekedar{" "}
+                Bukan{" "}
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
