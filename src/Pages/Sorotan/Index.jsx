@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
-import NewsBackground from "../assets/img/news-background.jpg";
-import { Posts } from "../assets/data/Posts";
+import NewsBackground from "../../assets/img/news-background.jpg";
+import { Posts } from "../../assets/data/Posts";
 import { ChevronRight } from "lucide-react";
 
 const Sorotan = () => {
@@ -17,7 +17,7 @@ const Sorotan = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full p-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold"
+      className="w-full px-4 py-24 md:px-24 md:py-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ const Sorotan = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-6xl text-white font-semibold font-display"
+            className="text-3xl md:text-6xl text-white font-semibold font-display"
           >
             Revolusi Dalam Sorotan
           </motion.h1>
@@ -49,7 +49,7 @@ const Sorotan = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg text-gray-200 font-light"
+            className="text-sm md:text-lg text-gray-200 font-light"
           >
             Saksikan perjalanan transformatif kami dalam menghadirkan inovasi
             yang mengubah industri. Dari setiap langkah revolusioner, peluncuran
@@ -67,7 +67,7 @@ const Sorotan = () => {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="mt-10 w-full h-full"
       >
-        <div className="w-full grid grid-cols-3 gap-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
           {Posts.map((post, index) => (
             <motion.div
               key={index}

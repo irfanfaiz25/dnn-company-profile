@@ -332,10 +332,13 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-2 pb-1">
-              <button className="w-full px-3 py-2.5 text-base font-medium text-center text-gray-900 bg-primary-gold rounded-md hover:bg-primary-gold/90">
+            <div className="pt-3 pb-1 w-full">
+              <Link
+                to="/revolusi-dalam-sorotan"
+                className="block w-full px-3 py-3 text-base font-medium text-center text-gray-900 bg-primary-gold rounded-full hover:bg-primary-gold/90"
+              >
                 Revolusi Dalam Sorotan
-              </button>
+              </Link>
             </div>
           </div>
         </div>

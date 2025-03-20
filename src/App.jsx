@@ -7,8 +7,8 @@ import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen/Index";
 import { useEffect } from "react";
 import Produk from "./Pages/Produk/Index";
-import Sorotan from "./Pages/Sorotan";
-import SorotanDetail from "./Pages/SorotanDetail";
+import Sorotan from "./Pages/Sorotan/Index";
+import SorotanDetail from "./Pages/Sorotan/SorotanDetail";
 import Kontak from "./Pages/Kontak/Index";
 
 function App() {

@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router";
 import { useState, useEffect } from "react";
 import { ChevronLeftCircle, Play } from "lucide-react";
-import { Posts } from "../assets/data/Posts";
+import { Posts } from "../../assets/data/Posts";
 import { motion } from "motion/react";
 
 const SorotanDetail = () => {
@@ -44,7 +44,7 @@ const SorotanDetail = () => {
   }
 
   return (
-    <div className="w-full p-6 md:p-12 lg:p-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold">
+    <div className="w-full px-4 py-24 md:px-12 md:py-12 lg:p-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const SorotanDetail = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full md:w-[85%] h-[300px] md:h-[600px] mb-3 md:mb-0"
+            className="w-full md:w-[85%] h-[200px] md:h-[600px] mb-3 md:mb-0"
           >
             {selectedMedia?.type === "video" ? (
               <motion.video
@@ -85,7 +85,7 @@ const SorotanDetail = () => {
             {post.media.map((media) => (
               <div
                 key={media.id}
-                className={`relative min-w-[100px] md:min-w-full h-24 cursor-pointer transition-all duration-200 ${
+                className={`relative min-w-[100px] md:min-w-full h-[70px] md:h-24 cursor-pointer transition-all duration-200 ${
                   selectedMedia?.id === media.id
                     ? "border-[3px] border-primary-gold rounded-xl"
                     : "opacity-70 hover:opacity-100"
@@ -117,12 +117,14 @@ const SorotanDetail = () => {
         </motion.div>
 
         {/* Post Content */}
-        <div className="mt-8 mb-6 space-y-4">
-          <p className="text-base text-gray-500 font-light">{post.date}</p>
-          <h1 className="mb-8 text-2xl md:text-4xl text-gray-800 font-bold font-display text-center">
+        <div className="mt-2 md:mt-8 mb-6 space-y-4">
+          <p className="text-sm md:text-base text-gray-500 font-light">
+            {post.date}
+          </p>
+          <h1 className="mb-8 text-xl md:text-4xl text-gray-800 font-bold font-display text-center">
             {post.title}
           </h1>
-          <div className="text-gray-600 text-base md:text-lg font-light space-y-4">
+          <div className="text-gray-600 text-sm md:text-lg font-light space-y-4">
             {post.description.split("\n").map((paragraph, index) => (
               <p key={index} className="indent-10">
                 {paragraph}
@@ -135,7 +137,7 @@ const SorotanDetail = () => {
         <div className="flex justify-start mt-8">
           <button
             onClick={() => window.history.back()}
-            className="flex items-center gap-2 px-6 py-3 bg-primary-gold hover:bg-yellow-600 text-white rounded-md transition-colors duration-200"
+            className="flex items-center gap-2 text-sm md:text-base px-4 py-2.5 md:px-6 md:py-3 bg-primary-gold hover:bg-yellow-600 text-white rounded-md transition-colors duration-200"
           >
             <ChevronLeftCircle className="w-5 h-5" />
             Kembali

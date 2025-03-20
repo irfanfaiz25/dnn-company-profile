@@ -70,6 +70,16 @@ export const Posts = [
         type: "image",
         url: News3,
       },
+      {
+        id: 4,
+        type: "image",
+        url: News3,
+      },
+      {
+        id: 5,
+        type: "image",
+        url: News3,
+      },
     ],
   },
 ];
