@@ -13,13 +13,13 @@ const News = () => {
   };
 
   return (
-    <div className="bg-white to-white min-h-screen p-24">
+    <div className="bg-white to-white min-h-screen px-4 py-16 md:px-24 md:py-24">
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-5xl font-display font-bold text-center text-gray-800 mb-4"
+          className="text-2xl md:text-5xl font-display font-bold text-center text-gray-800 mb-4"
         >
           Sorotan Terbaru
         </motion.h2>
@@ -27,7 +27,7 @@ const News = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-gray-600 text-lg"
+          className="text-gray-600 text-base md:text-lg text-center md:text-start"
         >
           Temukan Cerita Inspiratif dan Inovasi Terkini dalam Dunia Tembakau
           Premium
@@ -89,7 +89,7 @@ const News = () => {
         >
           <Link
             to="/revolusi-dalam-sorotan"
-            className="px-8 py-4 bg-primary-gold text-white rounded-md font-semibold text-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg"
+            className="px-4 py-2.5 md:px-8 md:py-4 bg-primary-gold text-white rounded-md font-semibold text-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Jelajahi Lebih Banyak Sorotan
           </Link>

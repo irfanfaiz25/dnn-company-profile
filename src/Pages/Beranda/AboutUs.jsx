@@ -5,30 +5,30 @@ import Picture2 from "../../assets/img/picture2.jpg";
 const AboutUs = () => {
   return (
     <div className="bg-white min-h-screen flex flex-col justify-center">
-      <div className="container mx-auto p-24">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 py-16 md:px-24 md:py-24">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="md:w-1/2"
           >
-            <h2 className="text-5xl font-display font-bold text-gray-800 mb-8">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-800 mb-8">
               Kisah Kami
             </h2>
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-base md:text-xl text-gray-600 mb-6">
               Berawal dari passion untuk menghadirkan cita rasa autentik
               tembakau, Nusantara hadir sebagai pionir dalam revolusi produk
               tembakau Indonesia.
             </p>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-base md:text-xl text-gray-600 mb-8">
               Setiap produk kami adalah hasil dari penelitian mendalam dan
               dedikasi untuk melestarikan warisan tembakau bangsa dengan
               sentuhan inovasi modern.
             </p>
             <Link
               to="/sejarah"
-              className="inline-block px-8 py-3 bg-primary-gold text-white rounded-md font-semibold hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300"
+              className="inline-block text-sm md:text-base px-8 py-3 bg-primary-gold text-white rounded-md font-semibold hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300"
             >
               Lebih Lanjut
             </Link>
