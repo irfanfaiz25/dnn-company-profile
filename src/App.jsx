@@ -6,7 +6,7 @@ import Sejarah from "./Pages/Sejarah/Index";
 import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen/Index";
 import { useEffect } from "react";
-import Produk from "./Pages/Produk";
+import Produk from "./Pages/Produk/Index";
 import Sorotan from "./Pages/Sorotan";
 import SorotanDetail from "./Pages/SorotanDetail";
 import Kontak from "./Pages/Kontak";

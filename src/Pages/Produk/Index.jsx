@@ -1,11 +1,11 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import Background from "../assets/img/tobacco-leaf.jpg";
-import PackKedhaton from "../assets/img/pack-kedhaton.png";
-import PackMataram from "../assets/img/pack-mataram.png";
-import PackDinasti from "../assets/img/pack-dinasti.png";
-import DetailKedhaton from "../assets/img/detail-kedhaton.png";
-import DetailMataram from "../assets/img/detail-mataram.png";
-import DetailDinasti from "../assets/img/detail-dinasti.png";
+import Background from "../../assets/img/tobacco-leaf.jpg";
+import PackKedhaton from "../../assets/img/pack-kedhaton.png";
+import PackMataram from "../../assets/img/pack-mataram.png";
+import PackDinasti from "../../assets/img/pack-dinasti.png";
+import DetailKedhaton from "../../assets/img/detail-kedhaton.png";
+import DetailMataram from "../../assets/img/detail-mataram.png";
+import DetailDinasti from "../../assets/img/detail-dinasti.png";
 import { useRef, useState } from "react";
 import { CircleArrowUp } from "lucide-react";
 
@@ -144,10 +144,10 @@ const Produk = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <h1 className="text-6xl text-gray-50 font-bold font-display text-center">
+          <h1 className="text-2xl md:text-6xl text-gray-50 font-bold font-display text-center">
             Produk Kami
           </h1>
-          <p className="mt-2 text-lg/7 text-gray-200 font-normal text-center">
+          <p className="mt-4 md:mt-2 text-sm/5 md:text-lg/7 text-gray-200 font-normal text-center">
             Tembakau, bahan utama dalam produk kami, adalah warisan leluhur yang
             telah menemani perjalanan peradaban sejak zaman kerajaan nusantara.
             Dengan kandungan senyawa alami yang memikat, tembakau kami dipilih
@@ -158,13 +158,13 @@ const Produk = () => {
         </motion.div>
       </motion.div>
 
-      <div className="min-h-screen p-24 bg-gradient-to-br from-white via-yellow-50 to-primary-gold overflow-hidden relative products-grid-section">
+      <div className="min-h-screen px-4 py-16 md:px-24 md:py-24 bg-gradient-to-br from-white via-yellow-50 to-primary-gold overflow-hidden relative products-grid-section">
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl font-display font-bold text-center text-gray-800"
+            className="text-3xl md:text-4xl font-display font-bold text-center text-gray-800"
           >
             Produk Kami
           </motion.h2>
@@ -179,7 +179,7 @@ const Produk = () => {
 
         <div className="mt-10 relative">
           {/* Products Grid */}
-          <div className="grid grid-cols-3 gap-16 w-full px-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full px-4 md:px-24">
             {products.map((product, index) => (
               <motion.div
                 key={index}
@@ -233,11 +233,11 @@ const Produk = () => {
         <div
           key={index}
           ref={(el) => (detailRefs.current[index] = el)}
-          className={`w-full h-[700px] ${
+          className={`w-full h-fit md:h-[700px] ${
             selectedProduct === product.id
               ? "bg-gradient-to-br from-primary-gold via-yellow-100 to-white"
               : "bg-white"
-          } flex items-center justify-center px-24 transition-all duration-500 ${
+          } flex items-center justify-center px-4 py-16 md:px-24 md:py-0 transition-all duration-500 ${
             selectedProduct === product.id ? "opacity-100" : "opacity-70"
           }`}
         >
@@ -247,7 +247,7 @@ const Produk = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               onClick={handleBackToProducts}
-              className="fixed bottom-75 right-8 bg-primary-gold text-gray-700 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
+              className="fixed text-sm md:text-base bottom-2 right-1/4 md:bottom-75 md:right-8 bg-primary-gold text-gray-700 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
             >
               <CircleArrowUp />
               Kembali ke Produk
@@ -264,7 +264,7 @@ const Produk = () => {
             <motion.div className="lg:w-1/2 relative group hover:scale-105 transition-transform duration-1000">
               <motion.img
                 src={product.image}
-                className="w-full h-[470px] object-cover rounded-3xl shadow-2xl"
+                className="w-full h-[250px] md:h-[470px] object-cover rounded-3xl shadow-2xl"
                 alt={`${product.name} Detail`}
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -279,14 +279,14 @@ const Produk = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <h1 className="text-5xl font-bold font-display text-gray-800 mb-4">
+                <h1 className="text-3xl md:text-5xl font-bold font-display text-gray-800 mb-2 md:mb-4">
                   {product.name}
                 </h1>
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium">
+                <div className="flex items-center gap-2 md:gap-4 mb-6">
+                  <span className="text-xs md:text-base px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium shadow-md">
                     {product.series}
                   </span>
-                  <span className="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium">
+                  <span className="text-xs md:text-base px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium shadow-md">
                     {product.stock}
                   </span>
                 </div>
@@ -298,7 +298,7 @@ const Produk = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <p className="text-lg/8 font-normal text-gray-600">
+                <p className="text-sm/5 md:text-lg/8 font-normal text-gray-600">
                   {product.description}
                 </p>
 
@@ -308,7 +308,9 @@ const Produk = () => {
                       <h3 className="text-gray-400 text-sm font-medium">
                         {key.toUpperCase()}
                       </h3>
-                      <p className="text-gray-800 font-medium">{value}</p>
+                      <p className="text-gray-800 font-medium text-sm md:text-base">
+                        {value}
+                      </p>
                     </div>
                   ))}
                 </div>
