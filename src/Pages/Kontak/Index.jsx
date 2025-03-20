@@ -5,14 +5,13 @@ import { motion } from "motion/react";
 const Kontak = () => {
   return (
     <div className="min-h-screen section-background">
-      <div className="max-w-7xl mx-auto pt-28 pb-16">
-        {/* Contact Info Cards */}
+      <div className="max-w-7xl mx-auto px-4 md:px-0 pt-28 pb-16">
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl font-display font-bold text-center text-gray-800 mb-4"
+            className="text-3xl md:text-5xl font-display font-bold text-center text-gray-800 mb-4"
           >
             Bangun Kesuksesan Bersama Kami
           </motion.h2>
@@ -20,9 +19,9 @@ const Kontak = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-gray-600 text-lg"
+            className="text-gray-600 text-sm md:text-lg"
           >
-            Wujudkan Visi Anda Menjadi Realitas
+            Wujudkan Visi Anda Menjadi Realita
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -33,6 +32,7 @@ const Kontak = () => {
           />
         </div>
 
+        {/* Contact Info Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
           initial={{ opacity: 0, y: 30 }}

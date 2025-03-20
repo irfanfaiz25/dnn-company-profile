@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import Produk from "./Pages/Produk/Index";
 import Sorotan from "./Pages/Sorotan";
 import SorotanDetail from "./Pages/SorotanDetail";
-import Kontak from "./Pages/Kontak";
+import Kontak from "./Pages/Kontak/Index";
 
 function App() {
   const location = useLocation();
