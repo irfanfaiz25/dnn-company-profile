@@ -2,14 +2,14 @@ import { motion } from "motion/react";
 
 const Testimonials = () => {
   return (
-    <div className="bg-gradient-to-t from-primary-gold via-yellow-100 to-white px-4 py-16 md:px-24 md:py-24">
+    <div className="bg-gradient-to-t from-primary-gold via-yellow-100 to-white px-4 py-16 lg:px-24 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-5xl font-display font-bold text-center text-gray-800 mb-4"
+            className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-center text-gray-800 mb-4"
           >
             Apa Kata Mereka?
           </motion.h2>

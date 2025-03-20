@@ -72,13 +72,13 @@ const Hero = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[200vh] section-background p-6 md:p-0"
+      className="relative min-h-[200vh] section-background p-6 md:p-4 lg:p-0"
     >
       <div className="sticky top-0 min-h-screen overflow-hidden">
         {/* Header content with initial animations */}
         <motion.div
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute top-15 left-0 w-full pt-6 md:pt-20"
+          className="absolute top-15 left-0 w-full pt-6 md:pt-12 lg:pt-20"
           style={{ opacity: headerOpacity }}
         >
           <div className="mx-auto text-center">
@@ -97,7 +97,7 @@ const Hero = () => {
                   stiffness: 100,
                   delay: 0.2,
                 }}
-                className="text-2xl md:text-6xl/19 text-gray-800 font-display font-bold"
+                className="text-2xl/8 md:text-5xl/15 lg:text-6xl/19 text-gray-800 font-display font-bold"
               >
                 Bukan Sekedar{" "}
                 <motion.span
@@ -119,7 +119,7 @@ const Hero = () => {
                   stiffness: 100,
                   delay: 0.6,
                 }}
-                className="text-2xl md:text-6xl/19 text-gray-800 font-display font-bold"
+                className="text-2xl/8 md:text-5xl/15 lg:text-6xl/19 text-gray-800 font-display font-bold"
               >
                 Ini adalah{" "}
                 <motion.span
@@ -137,13 +137,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="mt-6 text-wrap mx-auto"
+              className="mt-2 md:mt-6 text-wrap mx-auto"
             >
-              <p className="text-sm md:text-xl/7 text-gray-700 font-sans font-normal hover:text-gray-900 transition-colors duration-300">
+              <p className="text-sm md:text-lg/6 lg:text-xl/7 text-gray-700 font-sans font-normal hover:text-gray-900 transition-colors duration-300">
                 Kami menantang batas, meracik harmoni rasa yang memukau dari
                 kekayaan rempah nusantara.
               </p>
-              <p className="text-sm md:text-xl/7 text-gray-700 font-sans font-normal hover:text-gray-900 transition-colors duration-300">
+              <p className="text-sm md:text-lg/6 lg:text-xl/7 text-gray-700 font-sans font-normal hover:text-gray-900 transition-colors duration-300">
                 Nusantara - bagi mereka yang berani mengejar yang tak biasa,
                 menghadirkan sensasi autentik yang menggetarkan jiwa.
               </p>
@@ -152,7 +152,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Transitioning Image - This is the key component that grows and moves */}
-        <div className="habsolute mt-6 md:mt-16 w-full flex justify-center">
+        <div className="habsolute mt-6 md:-mt-3 lg:mt-16 w-full flex justify-center">
           <motion.div
             className="relative rounded-md overflow-hidden"
             style={{

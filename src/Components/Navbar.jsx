@@ -65,7 +65,7 @@ const Navbar = () => {
         animate={{
           backgroundColor:
             isScrolled || isMenuOpen
-              ? "rgb(23,23,23 / 0.8)"
+              ? "rgb(0,0,0 / 0.8)"
               : "rgba(255, 255, 255, 0)",
         }}
         transition={{ duration: 0.3 }}
