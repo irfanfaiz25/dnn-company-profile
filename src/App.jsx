@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
 import Beranda from "./Pages/Beranda/Beranda";
 import Navbar from "./Components/Navbar";
-import Sejarah from "./Pages/Sejarah";
+import Sejarah from "./Pages/Sejarah/Sejarah";
 import Footer from "./Components/Footer";
 import TimManajemen from "./Pages/TimManajemen";
 import { useEffect } from "react";

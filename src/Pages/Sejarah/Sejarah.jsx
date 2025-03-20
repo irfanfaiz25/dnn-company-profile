@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import Image3 from "../assets/img/image3.jpg";
+import Image3 from "../../assets/img/image3.jpg";
 
 const Sejarah = () => {
   const { scrollY } = useScroll();
@@ -36,7 +36,7 @@ const Sejarah = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <h1 className="text-6xl text-gray-50 font-semibold font-display text-center">
+          <h1 className="text-2xl md:text-6xl text-gray-50 font-semibold font-display text-center">
             Sejarah Perusahaan
           </h1>
         </motion.div>
@@ -45,13 +45,13 @@ const Sejarah = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="h-fit bg-white px-24 py-20 space-y-7 relative"
+        className="h-fit bg-white px-4 md:px-24 py-16 md:py-20 space-y-7 relative"
       >
         <motion.p
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-xl/9 font-normal indent-16 text-gray-800"
+          className="text-base/7 md:text-xl/9 font-normal indent-6 md:indent-16 text-gray-800"
         >
           PT Dwipa Nusantara Niaga didirikan pada tahun 2010 oleh sekelompok
           pengusaha visioner yang melihat potensi besar dalam industri
@@ -66,7 +66,7 @@ const Sejarah = () => {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="text-xl/9 font-normal indent-16 text-gray-800"
+          className="text-base/7 md:text-xl/9 font-normal indent-6 md:indent-16 text-gray-800"
         >
           Seiring berjalannya waktu, perusahaan kami terus berkembang dan
           memperluas jangkauan bisnisnya. Saat ini, PT Dwipa Nusantara Niaga
@@ -81,7 +81,7 @@ const Sejarah = () => {
 
       {/* visi dan misi */}
       <motion.div
-        className="h-fit w-full section-background px-24 py-20"
+        className="h-fit w-full section-background px-4 py-16 md:px-24 md:py-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -103,7 +103,7 @@ const Sejarah = () => {
             style={{ originX: 0.5 }}
           />
         </div>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <motion.div
             className="w-full p-10 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
             initial={{ x: -100, opacity: 0 }}
