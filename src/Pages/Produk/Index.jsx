@@ -188,6 +188,7 @@ const Produk = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -20 }}
+                onClick={() => handleProductClick(product.id)}
               >
                 <div className="w-full h-[500px] bg-gradient-to-br from-primary-gold/30 via-primary-gold/20 to-transparent backdrop-blur-sm rounded-3xl relative flex flex-col items-center justify-end pb-20 overflow-hidden">
                   <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -215,7 +216,7 @@ const Produk = () => {
                 </div>
 
                 <motion.button
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-800 px-5 py-2.5 rounded-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-800 px-5 py-2.5 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleProductClick(product.id)}
