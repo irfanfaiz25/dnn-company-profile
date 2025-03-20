@@ -45,7 +45,7 @@ const Sejarah = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="h-fit bg-white px-4 md:px-24 py-16 md:py-20 space-y-7 relative"
+        className="h-fit bg-white px-4 md:px-10 lg:px-24 py-16 md:py-10 lg:py-20 space-y-7 relative"
       >
         <motion.p
           initial={{ x: -50, opacity: 0 }}
@@ -81,7 +81,7 @@ const Sejarah = () => {
 
       {/* visi dan misi */}
       <motion.div
-        className="h-fit w-full section-background px-4 py-16 md:px-24 md:py-20"
+        className="h-fit w-full section-background px-4 py-16 md:px-10 lg:px-24 md:py-10 lg:py-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -103,7 +103,7 @@ const Sejarah = () => {
             style={{ originX: 0.5 }}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10">
           <motion.div
             className="w-full p-10 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
             initial={{ x: -100, opacity: 0 }}
