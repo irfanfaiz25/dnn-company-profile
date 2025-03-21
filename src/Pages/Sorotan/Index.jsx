@@ -17,7 +17,7 @@ const Sorotan = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full px-4 py-24 md:px-24 md:py-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold"
+      className="w-full px-4 py-24 md:px-8 xl:px-24 xl:py-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ const Sorotan = () => {
         transition={{ duration: 0.6, delay: 0.8 }}
         className="mt-10 w-full h-full"
       >
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {Posts.map((post, index) => (
             <motion.div
               key={index}

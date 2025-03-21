@@ -44,26 +44,26 @@ const SorotanDetail = () => {
   }
 
   return (
-    <div className="w-full px-4 py-24 md:px-12 md:py-12 lg:p-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold">
+    <div className="w-full px-4 py-24 md:px-8 xl:px-24 xl:py-24 bg-gradient-to-br from-white via-yellow-100 to-primary-gold">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full h-full p-4 md:p-8 bg-white rounded-xl shadow-xl"
+        className="w-full h-full p-4 md:p-6 xl:p-8 bg-white rounded-xl shadow-xl"
       >
         {/* Media Display */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col md:flex-row md:space-x-3"
+          className="flex flex-col md:flex-row md:space-x-2 xl:space-x-3"
         >
           {/* Main Media Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full md:w-[85%] h-[200px] md:h-[600px] mb-3 md:mb-0"
+            className="w-full md:w-[85%] h-[200px] md:h-[400px] xl:h-[700px] mb-3 md:mb-0"
           >
             {selectedMedia?.type === "video" ? (
               <motion.video
@@ -81,11 +81,11 @@ const SorotanDetail = () => {
           </motion.div>
 
           {/* Thumbnails */}
-          <div className="w-full md:w-[15%] h-24 md:h-[600px] flex md:flex-col space-x-2 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-y-auto">
+          <div className="w-full md:w-[15%] h-24 md:h-[400px] xl:h-[700px] flex md:flex-col space-x-2 md:space-x-0 md:space-y-2 overflow-x-auto md:overflow-y-auto">
             {post.media.map((media) => (
               <div
                 key={media.id}
-                className={`relative min-w-[100px] md:min-w-full h-[70px] md:h-24 cursor-pointer transition-all duration-200 ${
+                className={`relative min-w-[100px] xl:min-w-full h-[70px] xl:h-32 cursor-pointer transition-all duration-200 ${
                   selectedMedia?.id === media.id
                     ? "border-[3px] border-primary-gold rounded-xl"
                     : "opacity-70 hover:opacity-100"
@@ -117,7 +117,7 @@ const SorotanDetail = () => {
         </motion.div>
 
         {/* Post Content */}
-        <div className="mt-2 md:mt-8 mb-6 space-y-4">
+        <div className="mt-2 md:mt-5 xl:mt-8 mb-6 space-y-4">
           <p className="text-sm md:text-base text-gray-500 font-light">
             {post.date}
           </p>
