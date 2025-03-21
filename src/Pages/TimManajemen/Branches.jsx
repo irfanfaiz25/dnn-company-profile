@@ -30,7 +30,7 @@ const Branches = () => {
   ];
 
   return (
-    <div className="container mx-auto mt-32 md:mt-0 py-24 px-8">
+    <div className="container mx-auto mt-32 xl:mt-0 py-24 px-8">
       <div className="flex flex-col items-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ const Branches = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="grid grid-cols-1 md:grid-cols-4 gap-6 px-0 md:px-8"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 px-0 xl:px-8"
       >
         {branches.map((branch, index) => (
           <motion.div

@@ -46,10 +46,10 @@ const TimManajemen = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="pt-12 md:pt-6 bg-gradient-to-br from-white via-yellow-100 to-primary-gold overflow-hidden">
+      <div className="pt-12 md:pt-24 xl:pt-20 bg-gradient-to-br from-white via-yellow-100 to-primary-gold overflow-hidden">
         {/* Profile Display */}
         <div className="w-full min-h-screen relative">
-          <div className="container mx-auto px-4 md:px-16 h-full flex flex-col md:flex-row items-center justify-between space-y-16 md:space-y-0 py-8 md:py-0">
+          <div className="container mx-auto px-4 md:px-0 lg:px-4 xl:px-16 h-full flex flex-col md:flex-row items-center justify-between space-y-16 md:space-y-0 py-8 md:py-0">
             {/* Content wrapper - Reorder for mobile */}
             <div className="w-full md:w-1/2 md:pr-12 flex flex-col-reverse md:flex-col">
               <motion.div
@@ -59,19 +59,19 @@ const TimManajemen = () => {
                 transition={{ duration: 0.5 }}
                 className="min-h-[250px] md:h-[370px] mt-8 md:mt-0"
               >
-                <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-800 mb-3">
+                <h1 className="text-4xl md:text-5xl xl:text-6xl font-display font-bold text-gray-800 mb-3">
                   {selectedProfile.name}
                 </h1>
-                <h4 className="text-2xl font-medium text-gray-700 mb-8">
+                <h4 className="text-lg md:text-xl xl:text-2xl font-medium text-gray-700 mb-8">
                   {selectedProfile.position}
                 </h4>
-                <p className="text-lg leading-relaxed text-gray-600">
+                <p className="text-base md:text-lg leading-relaxed text-gray-600">
                   {selectedProfile.description}
                 </p>
               </motion.div>
 
               {/* teams profile */}
-              <div className="w-full md:w-fit h-fit mt-6 md:mt-10 p-4 md:p-8 bg-black/40 backdrop-blur-lg rounded-xl flex flex-wrap md:flex-nowrap justify-center gap-4 md:gap-8 shadow-2xl">
+              <div className="w-full md:w-fit h-fit mt-6 md:mt-72 lg:mt-44 xl:mt-10 p-4 md:p-8 bg-black/40 backdrop-blur-lg rounded-xl flex flex-wrap md:flex-nowrap justify-center gap-4 md:gap-8 shadow-2xl">
                 {teams.map((item, index) => (
                   <motion.div
                     key={index}
@@ -117,7 +117,7 @@ const TimManajemen = () => {
             </div>
 
             {/* Right side - Profile image */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end items-center mb-8 md:mb-0">
+            <div className="flex justify-center lg:justify-end items-center md:-mt-64 xl:mt-0 mb-8 lg:mb-0">
               <motion.div
                 className="relative w-[80%] group cursor-pointer"
                 key={selectedProfile.id}

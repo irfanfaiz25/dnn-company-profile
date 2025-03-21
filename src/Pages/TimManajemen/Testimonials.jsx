@@ -31,7 +31,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 md:px-24 py-16 min-h-[600px] section-background">
+    <div className="mx-auto px-4 md:px-6 xl:px-24 py-16 min-h-[600px] section-background">
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 relative z-10"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div

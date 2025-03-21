@@ -85,7 +85,7 @@ const Achievements = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="px-4 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8"
+        className="px-4 xl:px-24 grid grid-cols-1 lg:grid-cols-3 gap-8"
       >
         {stats.map((stat, index) => (
           <motion.div
