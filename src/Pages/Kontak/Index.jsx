@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const Kontak = () => {
   return (
     <div className="min-h-screen section-background">
-      <div className="max-w-7xl mx-auto px-4 md:px-0 pt-28 pb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 xl:px-0 pt-28 pb-16">
         <div className="flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
