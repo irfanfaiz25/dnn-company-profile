@@ -179,7 +179,7 @@ const Produk = () => {
 
         <div className="mt-10 relative">
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 w-full px-4 md:px-24">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 md:gap-16 w-full px-4 xl:px-24">
             {products.map((product, index) => (
               <motion.div
                 key={index}
@@ -234,11 +234,11 @@ const Produk = () => {
         <div
           key={index}
           ref={(el) => (detailRefs.current[index] = el)}
-          className={`w-full h-fit md:h-[700px] ${
+          className={`w-full h-fit xl:h-[700px] ${
             selectedProduct === product.id
               ? "bg-gradient-to-br from-primary-gold via-yellow-100 to-white"
               : "bg-white"
-          } flex items-center justify-center px-4 py-16 md:px-24 md:py-0 transition-all duration-500 ${
+          } flex items-center justify-center px-4 py-16 md:px-8 xl:px-24 xl:py-0 transition-all duration-500 ${
             selectedProduct === product.id ? "opacity-100" : "opacity-70"
           }`}
         >
@@ -248,15 +248,15 @@ const Produk = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               onClick={handleBackToProducts}
-              className="fixed text-sm md:text-base bottom-2 right-1/4 md:bottom-75 md:right-8 bg-primary-gold text-gray-700 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
+              className="fixed text-sm md:text-base bottom-2 right-1/4 md:bottom-7 md:right-[37%] lg:bottom-15 xl:bottom-75 lg:right-8 bg-primary-gold text-gray-700 px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-50"
             >
               <CircleArrowUp />
               Kembali ke Produk
             </motion.button>
           )}
           <motion.div
-            className={`flex flex-col md:flex-row ${
-              index % 2 === 1 ? "md:flex-row-reverse" : ""
+            className={`flex flex-col lg:flex-row ${
+              index % 2 === 1 ? "lg:flex-row-reverse" : ""
             } gap-12 max-w-7xl mx-auto`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
