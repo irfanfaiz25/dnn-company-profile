@@ -63,23 +63,6 @@ const Produk = () => {
   const products = [
     {
       id: 1,
-      name: "Mataram Nusantara",
-      series: "Premium Blend",
-      stock: "In Stock",
-      description:
-        "Kedhaton Nusantara merupakan manifestasi dari keanggunan cita rasa klasik yang dipadukan dengan sentuhan modernitas. Diproduksi secara eksklusif dengan tembakau pilihan dari lembah-lembah subur Nusantara, setiap batang merupakan hasil kurasi yang ketat dan proses pemeraman yang sempurna.",
-      details: {
-        blend: "Premium Virginia & Oriental",
-        characteristic: "Medium Bodied, Smooth",
-        aroma: "Floral dengan Hint Kayu Manis",
-        packaging: "16 Batang Premium",
-      },
-      image: DetailMataram,
-      packImage: PackMataram,
-      bgColor: "bg-white",
-    },
-    {
-      id: 2,
       name: "Kedhaton Nusantara",
       series: "Signature Series",
       stock: "In Stock",
@@ -89,11 +72,28 @@ const Produk = () => {
         blend: "Premium Virginia & Oriental Blend",
         characteristic: "Full Bodied, Rich",
         aroma: "Woody dengan Hint Vanilla",
-        packaging: "16 Batang Premium",
+        packaging: "12 Batang Premium",
       },
       image: DetailKedhaton,
       packImage: PackKedhaton,
       bgColor: "bg-gradient-to-br from-primary-gold via-yellow-100 to-white",
+    },
+    {
+      id: 2,
+      name: "Mataram Nusantara",
+      series: "Premium Blend",
+      stock: "In Stock",
+      description:
+        "Kedhaton Nusantara merupakan manifestasi dari keanggunan cita rasa klasik yang dipadukan dengan sentuhan modernitas. Diproduksi secara eksklusif dengan tembakau pilihan dari lembah-lembah subur Nusantara, setiap batang merupakan hasil kurasi yang ketat dan proses pemeraman yang sempurna.",
+      details: {
+        blend: "Premium Virginia & Oriental",
+        characteristic: "Medium Bodied, Smooth",
+        aroma: "Floral dengan Hint Kayu Manis",
+        packaging: "12 Batang Premium",
+      },
+      image: DetailMataram,
+      packImage: PackMataram,
+      bgColor: "bg-white",
     },
     {
       id: 3,
@@ -106,7 +106,7 @@ const Produk = () => {
         blend: "Special Virginia & Oriental Selection",
         characteristic: "Full Bodied, Complex",
         aroma: "Spicy dengan Hint Karamel",
-        packaging: "16 Batang Premium",
+        packaging: "12 Batang Premium",
       },
       image: DetailDinasti,
       packImage: PackDinasti,
