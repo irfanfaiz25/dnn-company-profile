@@ -38,7 +38,7 @@ const Achievements = () => {
   const stats = [
     {
       icon: <Building2 size={32} />,
-      count: "20",
+      count: "7",
       label: "Cabang",
       color: "primary-gold",
       iconColor: "text-amber-700",
@@ -46,7 +46,7 @@ const Achievements = () => {
     },
     {
       icon: <Users2 size={32} />,
-      count: "500",
+      count: "350",
       label: "Karyawan",
       color: "secondary-green",
       iconColor: "text-green-200",
@@ -54,7 +54,7 @@ const Achievements = () => {
     },
     {
       icon: <TrendingUp size={32} />,
-      count: "45",
+      count: "75",
       label: "Pertumbuhan",
       color: "tertiary-red",
       iconColor: "text-red-200",

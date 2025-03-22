@@ -6,26 +6,44 @@ const Branches = () => {
     {
       city: "Boyolali",
       region: "Jawa Tengah",
-      established: 2013,
+      established: "November 2024",
       employees: 62,
     },
     {
       city: "Sukoharjo",
       region: "Jawa Tengah",
-      established: 2010,
+      established: "Desember 2024",
+      employees: 45,
+    },
+    {
+      city: "Karanganyar",
+      region: "Jawa Tengah",
+      established: "Januari 2025",
       employees: 45,
     },
     {
       city: "Wonogiri",
       region: "Jawa Tengah",
-      established: 2012,
+      established: "Januari 2025",
       employees: 38,
     },
     {
       city: "Ponorogo",
       region: "Jawa Timur",
-      established: 2008,
-      employees: 75,
+      established: "Februari 2025",
+      employees: 50,
+    },
+    {
+      city: "Cirebon",
+      region: "Jawa Barat",
+      established: "April 2025",
+      employees: 20,
+    },
+    {
+      city: "Yogyakarta",
+      region: "DIY",
+      established: "April 2025",
+      employees: 25,
     },
   ];
 
