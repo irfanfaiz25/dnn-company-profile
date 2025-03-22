@@ -42,7 +42,7 @@ const Testimonials = () => {
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
                 <h4 className="font-semibold">Budi Santoso</h4>
-                <p className="text-gray-500">Food Enthusiast</p>
+                <p className="text-gray-500">Semarang</p>
               </div>
             </div>
             <p className="text-gray-600">
@@ -62,7 +62,7 @@ const Testimonials = () => {
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
                 <h4 className="font-semibold">Siti Rahma</h4>
-                <p className="text-gray-500">Chef Profesional</p>
+                <p className="text-gray-500">Solo</p>
               </div>
             </div>
             <p className="text-gray-600">
@@ -82,7 +82,7 @@ const Testimonials = () => {
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
                 <h4 className="font-semibold">Ahmad Ridwan</h4>
-                <p className="text-gray-500">Pecinta Kuliner</p>
+                <p className="text-gray-500">Yogyakarta</p>
               </div>
             </div>
             <p className="text-gray-600">

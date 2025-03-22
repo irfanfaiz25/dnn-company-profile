@@ -5,9 +5,22 @@ import Picture2 from "../../assets/img/picture2.jpg";
 import Picture3 from "../../assets/img/picture3.jpg";
 import Picture4 from "../../assets/img/picture4.jpg";
 
+// Add screen size detection at the top of the component
 const Hero = () => {
   const containerRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   const imagesCarousel = [
     {
       id: 1,
@@ -72,14 +85,20 @@ const Hero = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[200vh] section-background p-6 md:p-4 lg:p-0"
+      className={`relative ${
+        isMobile ? "min-h-screen" : "min-h-[200vh]"
+      } section-background p-6 md:p-4 lg:p-0`}
     >
-      <div className="sticky top-0 min-h-screen overflow-hidden">
+      <div
+        className={`${
+          isMobile ? "h-screen" : "sticky"
+        } top-0 min-h-screen overflow-hidden`}
+      >
         {/* Header content with initial animations */}
         <motion.div
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="absolute top-15 left-0 w-full pt-6 md:pt-12 lg:pt-20"
-          style={{ opacity: headerOpacity }}
+          style={{ opacity: isMobile ? 1 : headerOpacity }}
         >
           <div className="mx-auto text-center">
             <motion.div
@@ -151,19 +170,31 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Transitioning Image - This is the key component that grows and moves */}
-        <div className="habsolute mt-6 md:-mt-3 lg:mt-16 w-full flex justify-center">
+        {/* Modified Image Section */}
+        <div
+          className={`${
+            isMobile ? "mt-[40vh]" : "habsolute mt-6 md:-mt-3 lg:mt-16"
+          } w-full flex justify-center`}
+        >
           <motion.div
             className="relative rounded-md overflow-hidden"
-            style={{
-              width: imageWidth,
-              height: imageHeight,
-              y: imageY,
-              x: imageX,
-              scale: imageScale,
-              zIndex: 20,
-              transition: { type: "spring", stiffness: 300, damping: 30 },
-            }}
+            style={
+              isMobile
+                ? {
+                    width: "100%",
+                    height: "40vh",
+                    zIndex: 20,
+                  }
+                : {
+                    width: imageWidth,
+                    height: imageHeight,
+                    y: imageY,
+                    x: imageX,
+                    scale: imageScale,
+                    zIndex: 20,
+                    transition: { type: "spring", stiffness: 300, damping: 30 },
+                  }
+            }
           >
             <div className="relative w-full h-full">
               {imagesCarousel.map((img, index) => (
@@ -186,7 +217,11 @@ const Hero = () => {
               ))}
 
               {/* Carousel Navigation */}
-              <div className="absolute bottom-28 left-0 right-0 flex justify-center gap-2 z-30">
+              <div
+                className={`absolute ${
+                  isMobile ? "bottom-16" : "bottom-28"
+                } left-0 right-0 flex justify-center gap-2 z-30`}
+              >
                 {imagesCarousel.map((_, index) => (
                   <button
                     key={index}
@@ -201,13 +236,13 @@ const Hero = () => {
 
             {/* Existing caption */}
             <motion.div
-              className="absolute bottom-0 w-full h-24 p-3 bg-black/50 rounded-b-md"
-              style={{ opacity: captionOpacity }}
+              className="absolute bottom-0 w-full p-3 bg-black/50 backdrop-blur-sm"
+              style={{ opacity: isMobile ? 1 : captionOpacity }}
             >
-              <h3 className="text-lg text-gray-50 font-semibold">
+              <h3 className="text-base md:text-lg text-gray-50 font-semibold mb-1">
                 {imagesCarousel[currentImage].title}
               </h3>
-              <p className="text-base font-normal text-gray-200">
+              <p className="text-xs md:text-sm font-normal text-gray-200 line-clamp-2">
                 {imagesCarousel[currentImage].description}
               </p>
             </motion.div>
@@ -215,8 +250,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Spacer div to allow for scrolling - adjust height as needed */}
-      <div style={{ height: "100vh" }}></div>
+      {/* Spacer div only for desktop */}
+      {!isMobile && <div style={{ height: "100vh" }}></div>}
     </div>
   );
 };
