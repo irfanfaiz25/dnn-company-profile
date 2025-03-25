@@ -148,12 +148,12 @@ const Produk = () => {
             Produk Kami
           </h1>
           <p className="mt-4 md:mt-2 text-sm/5 md:text-lg/7 text-gray-200 font-normal text-center">
-            Tembakau, bahan utama dalam produk kami, adalah warisan leluhur yang
-            telah menemani perjalanan peradaban sejak zaman kerajaan nusantara.
-            Dengan kandungan senyawa alami yang memikat, tembakau kami dipilih
-            dari varietas terbaik dan diproses dengan keahlian tradisional yang
-            dipadukan teknologi modern untuk menghasilkan produk premium yang
-            tak tertandingi.
+            Tembakau premium kami diperkaya dengan perpaduan rempah-rempah
+            nusantara yang memikat. Setiap hisapan menghadirkan sensasi cengkeh
+            pilihan yang menghangatkan, aroma kayu manis yang menenangkan, dan
+            sentuhan kapulaga yang menyegarkan. Diproses dengan kearifan
+            tradisional dan teknologi modern, menciptakan harmoni rasa yang
+            memanjakan para penikmat rokok premium sejati.
           </p>
         </motion.div>
       </motion.div>
