@@ -41,13 +41,13 @@ const Testimonials = () => {
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
-                <h4 className="font-semibold">Budi Santoso</h4>
-                <p className="text-gray-500">Semarang</p>
+                <h4 className="font-semibold">Hendra Wijaya</h4>
+                <p className="text-gray-500">Malang</p>
               </div>
             </div>
             <p className="text-gray-600">
-              "Rasanya benar-benar otentik! Setiap gigitan membawa saya pada
-              perjalanan rasa yang menakjubkan."
+              "Aroma tembakau yang khas dan berkualitas tinggi. Setiap hisapan
+              memberikan sensasi yang menenangkan dan memuaskan."
             </p>
           </motion.div>
 
@@ -61,13 +61,13 @@ const Testimonials = () => {
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
-                <h4 className="font-semibold">Siti Rahma</h4>
-                <p className="text-gray-500">Solo</p>
+                <h4 className="font-semibold">Rudi Hartono</h4>
+                <p className="text-gray-500">Kudus</p>
               </div>
             </div>
             <p className="text-gray-600">
-              "Kualitas rempah yang digunakan sangat premium. Aromanya kuat dan
-              rasanya konsisten."
+              "Tembakau pilihan dengan cita rasa yang konsisten. Perpaduan
+              sempurna antara tradisi dan kualitas modern."
             </p>
           </motion.div>
 
@@ -81,13 +81,13 @@ const Testimonials = () => {
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
               <div>
-                <h4 className="font-semibold">Ahmad Ridwan</h4>
-                <p className="text-gray-500">Yogyakarta</p>
+                <h4 className="font-semibold">Bambang Suryanto</h4>
+                <p className="text-gray-500">Temanggung</p>
               </div>
             </div>
             <p className="text-gray-600">
-              "Kedathon menghadirkan revolusi dalam dunia kuliner. Inovasi yang
-              tak terlupakan!"
+              "Produk tembakau terbaik yang pernah saya coba. Karakteristik rasa
+              yang kuat dan aroma yang memukau."
             </p>
           </motion.div>
         </div>
