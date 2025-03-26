@@ -3,8 +3,15 @@ import Branches from "./Branches";
 import Testimonials from "./Testimonials";
 import TeamImage from "../../assets/img/teams.jpg";
 import { motion } from "motion/react";
+import { useRef } from "react";
 
 const TimManajemen = () => {
+  const achievementsRef = useRef(null);
+
+  const scrollToAchievements = () => {
+    achievementsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const manajemen = [
     {
       id: 1,
@@ -71,6 +78,7 @@ const TimManajemen = () => {
               pelanggan.
             </p>
             <motion.button
+              onClick={scrollToAchievements}
               className="px-8 py-3 bg-primary-gold text-gray-900 font-medium rounded-full hover:bg-primary-gold/90 transition-all duration-300 shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
@@ -134,7 +142,9 @@ const TimManajemen = () => {
 
       <div className="bg-white overflow-hidden">
         {/* Achievements Display */}
-        <Achievements />
+        <div ref={achievementsRef}>
+          <Achievements />
+        </div>
 
         {/* Branches Display */}
         <Branches />
