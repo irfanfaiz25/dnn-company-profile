@@ -56,8 +56,8 @@ const Kontak = () => {
             </div>
             <h3 className="font-semibold text-gray-900 mb-1">Kunjungi Kami</h3>
             <p className="text-gray-600 text-sm">
-              Dusun III, Repaking, Kec. Wonosegoro, Kabupaten Boyolali, Jawa
-              Tengah 57382
+              Jl. Raya Karanggede - Kedungjati, Dusun I, Kebonan, Kec.
+              Karanggede, Kabupaten Boyolali, Jawa Tengah 57381
             </p>
           </motion.div>
 
@@ -81,7 +81,15 @@ const Kontak = () => {
               href="tel:+6221234567890"
               className="text-gray-600 text-sm hover:text-red-500"
             >
-              +62 21 234 567 890
+              0298-3539-040
+            </a>
+            <a
+              href="https://wa.me/6285117225313"
+              className="text-gray-600 text-sm hover:text-red-500 block mt-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (WhatsApp) +62851-1722-5313
             </a>
           </motion.div>
 
@@ -128,7 +136,9 @@ const Kontak = () => {
               Jam Operasional
             </h3>
             <p className="text-gray-600 text-sm">
-              Senin - Jumat: 09.00 - 18.00
+              Senin - Jumat: 08.00 - 16.00
+              <br />
+              Sabtu: 08.00 - 12.00
               <br />
               Minggu (Tutup)
             </p>
@@ -143,7 +153,7 @@ const Kontak = () => {
           transition={{ duration: 0.5 }}
         >
           <iframe
-            src="https://maps.google.com/maps?width=600&height=400&hl=en&q=kukus%20dwipa&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.018245944182!2d110.64041711149015!3d-7.351846992626381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a750000d35891%3A0x7312daad2f9ede83!2sDwipa%20Nusantara%20Niaga!5e0!3m2!1sid!2sid!4v1743032375641!5m2!1sid!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
