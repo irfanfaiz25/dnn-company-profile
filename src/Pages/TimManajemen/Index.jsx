@@ -1,144 +1,138 @@
-import { useState } from "react";
-import { motion } from "motion/react";
-import Profile1 from "../../assets/img/profil1.png";
-import Profile2 from "../../assets/img/profil2.png";
 import Achievements from "./Achievements";
 import Branches from "./Branches";
 import Testimonials from "./Testimonials";
+import TeamImage from "../../assets/img/teams.jpg";
+import { motion } from "motion/react";
 
 const TimManajemen = () => {
-  const teams = [
+  const manajemen = [
     {
       id: 1,
-      name: "Budi Santoso",
-      position: "Business Management",
-      image: Profile1,
-      description:
-        "Pemimpin visioner dengan pengalaman lebih dari 15 tahun dalam manajemen bisnis dan perencanaan strategis. Dikenal karena mengimplementasikan solusi inovatif yang mendorong pertumbuhan dan efisiensi organisasi. Meraih gelar MBA dari Harvard Business School dengan predikat istimewa. Berhasil memimpin berbagai inisiatif transformasi digital yang menghasilkan pengurangan biaya 45% dan pertumbuhan pendapatan 30%. Pembicara utama reguler di konferensi bisnis Fortune 500 dan mentor bagi para pemimpin bisnis yang sedang berkembang.",
+      name: "Irwan Yunanto",
+      position: "Direktur Utama",
     },
     {
       id: 2,
-      name: "Rani Aprilia",
-      position: "Operational Manager",
-      image: Profile2,
-      description:
-        "Manajer operasional berpengalaman dengan lebih dari 10 tahun dalam mengoptimalkan proses bisnis dan meningkatkan efisiensi organisasi. Ahli dalam manajemen lean dan metodologi Six Sigma. Memimpin tim lintas fungsi dalam implementasi sistem ERP yang berhasil mengurangi biaya operasional sebesar 35%.",
+      name: "Amirudin Zuhri",
+      position: "Direktur Keuangan",
     },
     {
       id: 3,
-      name: "Rendi Irwansyah",
-      position: "Financial Analyst",
-      image: Profile1,
-      description:
-        "Analis Keuangan Tersertifikasi dengan keahlian dalam strategi investasi dan manajemen risiko. Sebelumnya bekerja dengan bank-bank investasi terkemuka. Spesialis dalam analisis pasar dan optimalisasi portofolio. Memiliki rekam jejak mencapai return 20% di atas pasar untuk portofolio yang dikelola.",
-    },
-    {
-      id: 4,
-      name: "Sinta Sari",
-      position: "Marketing Specialist",
-      image: Profile2,
-      description:
-        "Profesional pemasaran kreatif dengan keahlian dalam pemasaran digital dan pengembangan merek. Memimpin kampanye sukses untuk perusahaan Fortune 100. Mencapai peningkatan 150% dalam keterlibatan media sosial dan pertumbuhan pangsa pasar 40% melalui strategi pemasaran inovatif.",
+      name: "Yoan Fauzia",
+      position: "Business Development",
     },
   ];
 
-  const [selectedProfile, setSelectedProfile] = useState(teams[0]);
-
   return (
     <div className="w-full h-full">
-      <div className="pt-12 md:pt-24 xl:pt-20 bg-gradient-to-br from-white via-yellow-100 to-primary-gold overflow-hidden">
-        {/* Profile Display */}
-        <div className="w-full min-h-screen relative">
-          <div className="container mx-auto px-4 md:px-0 lg:px-4 xl:px-16 h-full flex flex-col md:flex-row items-center justify-between space-y-16 md:space-y-0 py-8 md:py-0">
-            {/* Content wrapper - Reorder for mobile */}
-            <div className="w-full md:w-1/2 md:pr-12 flex flex-col-reverse md:flex-col">
-              <motion.div
-                key={selectedProfile.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="min-h-[250px] md:h-[370px] mt-8 md:mt-0"
-              >
-                <h1 className="text-4xl md:text-5xl xl:text-6xl font-display font-bold text-gray-800 mb-3">
-                  {selectedProfile.name}
-                </h1>
-                <h4 className="text-lg md:text-xl xl:text-2xl font-medium text-gray-700 mb-8">
-                  {selectedProfile.position}
-                </h4>
-                <p className="text-base md:text-lg leading-relaxed text-gray-600">
-                  {selectedProfile.description}
-                </p>
-              </motion.div>
+      {/* Hero Section */}
+      <motion.div
+        className="w-full min-h-screen relative overflow-hidden flex flex-col justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Background Image with Overlay */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <img
+            src={TeamImage}
+            alt="Team Background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+        </motion.div>
 
-              {/* teams profile */}
-              <div className="w-full md:w-fit h-fit mt-6 md:mt-72 lg:mt-44 xl:mt-10 p-4 md:p-8 bg-black/40 backdrop-blur-lg rounded-xl flex flex-wrap md:flex-nowrap justify-center gap-4 md:gap-8 shadow-2xl">
-                {teams.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className={`flex flex-col items-center w-36 transition-all duration-300 cursor-pointer
-                ${
-                  selectedProfile.id === item.id
-                    ? "scale-110"
-                    : "hover:scale-105"
-                }`}
-                    onClick={() => setSelectedProfile(item)}
-                    whileHover={{ y: -5 }}
-                  >
-                    <div
-                      className={`w-24 h-24 rounded-full bg-white shadow-lg overflow-hidden 
-                ${
-                  selectedProfile.id === item.id
-                    ? "border-4 border-primary-gold"
-                    : "border-2 border-primary-gold/50"
-                }`}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="w-full h-full rounded-full object-contain transition-transform duration-300 hover:scale-110"
-                      />
+        {/* Content Container */}
+        <div className="container mx-auto px-14 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative z-10 py-20">
+          {/* Text Content */}
+          <motion.div
+            className="md:w-1/2 text-left md:pr-8 mb-12 md:mb-0"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "80px" }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="h-1.5 bg-primary-gold mb-6 rounded-full"
+            />
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 leading-tight">
+              Tim <span className="text-primary-gold">Manajemen</span> Kami
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-8">
+              Kami adalah tim yang berdedikasi untuk memberikan produk
+              berkualitas tinggi dengan standar layanan terbaik untuk kepuasan
+              pelanggan.
+            </p>
+            <motion.button
+              className="px-8 py-3 bg-primary-gold text-gray-900 font-medium rounded-full hover:bg-primary-gold/90 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Kenali Kami
+            </motion.button>
+          </motion.div>
+
+          {/* Image or Visual Element */}
+          <motion.div
+            className="relative"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <div className="relative">
+              {/* Team stats card */}
+              <motion.div
+                className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-2xl max-w-md mx-auto"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-semibold text-white">
+                    Manajemen
+                  </h3>
+                  <span className="px-3 py-1 bg-primary-gold/20 text-primary-gold rounded-full text-sm">
+                    Kepemimpinan
+                  </span>
+                </div>
+
+                <div className="mb-6 space-y-4">
+                  {manajemen.map((item) => (
+                    <div key={item.id} className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-primary-gold/30 rounded-full flex items-center justify-center">
+                        <span className="text-primary-gold text-xl font-bold">
+                          {item.name.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium">{item.name}</h4>
+                        <p className="text-gray-300 text-sm">{item.position}</p>
+                      </div>
                     </div>
-                    <h3
-                      className={`mt-3 text-base font-semibold text-center
-                ${
-                  selectedProfile.id === item.id
-                    ? "text-primary-gold"
-                    : "text-gray-50"
-                }`}
-                    >
-                      {item.name}
-                    </h3>
-                    <p className="text-sm text-gray-200 font-medium text-center mt-1">
-                      {item.position}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  ))}
+                </div>
 
-            {/* Right side - Profile image */}
-            <div className="flex justify-center lg:justify-end items-center md:-mt-64 xl:mt-0 mb-8 lg:mb-0">
-              <motion.div
-                className="relative w-[80%] group cursor-pointer"
-                key={selectedProfile.id}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-200 to-primary-gold opacity-75 transform rotate-6 scale-95 transition-transform duration-300 group-hover:rotate-12"></div>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 group-hover:scale-105">
-                  <img
-                    src={selectedProfile.image}
-                    alt={selectedProfile.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="pt-4 border-t border-white/20">
+                  <p className="text-gray-300 text-sm">
+                    Tim manajemen kami mengedepankan keunggulan dan inovasi
+                    untuk menghadirkan produk berkualitas premium yang memenuhi
+                    standar industri tertinggi.
+                  </p>
                 </div>
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
+      </motion.div>
 
+      <div className="bg-white overflow-hidden">
         {/* Achievements Display */}
         <Achievements />
 

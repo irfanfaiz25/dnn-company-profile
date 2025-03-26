@@ -85,7 +85,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.8 }}
-              className="py-2 text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-primary-gold to-amber-100 bg-[length:200%_auto] animate-[var(--animate-shine)] transition-[background-position] ease-[var(--bounce-in)]"
+              className="py-4 text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-primary-gold to-amber-100 bg-[length:200%_auto] animate-[var(--animate-shine)] transition-[background-position] ease-[var(--bounce-in)]"
             >
               {item.title}
             </motion.h1>

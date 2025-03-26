@@ -94,6 +94,7 @@ const Navbar = () => {
                 className={`p-2 rounded-md ${
                   location.pathname === "/sejarah" ||
                   location.pathname === "/produk" ||
+                  location.pathname === "/tim-manajemen" ||
                   location.pathname === "/"
                     ? "text-gray-50"
                     : isScrolled
@@ -145,6 +146,7 @@ const Navbar = () => {
                             className={`flex items-center gap-1 text-base cursor-pointer font-medium ${
                               location.pathname === "/sejarah" ||
                               location.pathname === "/produk" ||
+                              location.pathname === "/tim-manajemen" ||
                               location.pathname === "/"
                                 ? "text-gray-50"
                                 : isScrolled
@@ -199,6 +201,7 @@ const Navbar = () => {
                             className={`relative text-base cursor-pointer font-medium ${
                               location.pathname === "/sejarah" ||
                               location.pathname === "/produk" ||
+                              location.pathname === "/tim-manajemen" ||
                               location.pathname === "/"
                                 ? "text-gray-50"
                                 : isScrolled
@@ -257,6 +260,7 @@ const Navbar = () => {
                       className={`absolute flex items-center justify-center w-full h-full ${
                         location.pathname === "/sejarah" ||
                         location.pathname === "/produk" ||
+                        location.pathname === "/tim-manajemen" ||
                         location.pathname === "/"
                           ? "text-gray-50"
                           : isScrolled

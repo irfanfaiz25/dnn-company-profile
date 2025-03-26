@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import Profile1 from "../../assets/img/profil1.png";
 import Profile2 from "../../assets/img/profil2.png";
+import { MessageSquareQuote } from "lucide-react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -31,7 +32,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 md:px-6 xl:px-24 py-16 min-h-[600px] section-background">
+    <div className="mx-auto h-screen flex flex-col justify-center px-4 md:px-6 xl:px-24 py-24 bg-gradient-to-t from-primary-gold via-amber-100 to-white">
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -39,15 +40,24 @@ const Testimonials = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-3xl md:text-4xl font-display font-bold text-center text-gray-800"
         >
-          Cerita Kami
+          Kami Bangga
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="w-24 h-1.5 bg-primary-gold mt-5 mb-24 rounded-full"
+          className="w-24 h-1.5 bg-primary-gold mt-5 mb-8 rounded-full"
           style={{ originX: 0.5 }}
         />
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-center text-gray-600 max-w-2xl mb-16"
+        >
+          Kisah inspiratif dan pengalaman berharga dari para talenta terbaik
+          yang telah berkembang bersama dalam membangun kesuksesan perusahaan.
+        </motion.p>
       </div>
 
       <div className="relative">
@@ -70,7 +80,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -89,8 +99,13 @@ const Testimonials = () => {
                 y: -8,
                 transition: { duration: 0.3 },
               }}
-              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
             >
+              <MessageSquareQuote
+                size={40}
+                className="absolute top-6 right-6 text-primary-gold/10 group-hover:text-primary-gold/20 transition-colors duration-300"
+              />
+
               <motion.div
                 className="flex items-start mb-6"
                 initial={{ x: -20 }}
