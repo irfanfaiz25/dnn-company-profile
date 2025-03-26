@@ -5,11 +5,6 @@ import News from "./News";
 import Testimonials from "./Testimonials";
 
 const Beranda = () => {
-  // const { scrollYProgress } = useScroll({
-  //   target: containerRef,
-  //   offset: ["start start", "end start"],
-  // });
-
   return (
     <>
       <Hero />
