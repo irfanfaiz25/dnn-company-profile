@@ -292,8 +292,17 @@ const Produk = () => {
                       {product.stock}
                     </span>
                   </div>
-                  {/* modals trigger button */}
-                  <button className="text-xs md:text-base px-6 py-1.5 bg-secondary-green hover:bg-secondary-green/90 text-gray-50 rounded-full font-medium shadow-md">
+                  {/* order products button */}
+                  <button
+                    className="text-xs md:text-base px-6 py-1.5 bg-secondary-green hover:bg-secondary-green/90 text-gray-50 rounded-full font-medium shadow-md"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering parent onClick
+                      const message = `Halo, saya ingin memesan produk ${product.name}. Mohon informasi lebih lanjut.`;
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/+6285339462767?text=${encodedMessage}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}
+                  >
                     Order
                   </button>
                 </div>
