@@ -138,7 +138,8 @@ const Navbar = () => {
                           <motion.div
                             className={`flex items-center gap-1 text-base cursor-pointer font-medium ${
                               location.pathname === "/sejarah" ||
-                              location.pathname === "/produk"
+                              location.pathname === "/produk" ||
+                              location.pathname === "/"
                                 ? "text-gray-50"
                                 : isScrolled
                                 ? "text-gray-50"
@@ -191,7 +192,8 @@ const Navbar = () => {
                           <motion.div
                             className={`relative text-base cursor-pointer font-medium ${
                               location.pathname === "/sejarah" ||
-                              location.pathname === "/produk"
+                              location.pathname === "/produk" ||
+                              location.pathname === "/"
                                 ? "text-gray-50"
                                 : isScrolled
                                 ? "text-gray-50"
@@ -248,7 +250,8 @@ const Navbar = () => {
                     <span
                       className={`absolute flex items-center justify-center w-full h-full ${
                         location.pathname === "/sejarah" ||
-                        location.pathname === "/produk"
+                        location.pathname === "/produk" ||
+                        location.pathname === "/"
                           ? "text-gray-50"
                           : isScrolled
                           ? "text-gray-50"

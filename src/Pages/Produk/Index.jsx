@@ -7,7 +7,7 @@ import DetailKedhaton from "../../assets/img/detail-kedhaton.png";
 import DetailMataram from "../../assets/img/detail-mataram.png";
 import DetailDinasti from "../../assets/img/detail-dinasti.png";
 import { useRef, useState } from "react";
-import { CircleArrowUp, ShoppingCart } from "lucide-react";
+import { CircleArrowUp } from "lucide-react";
 
 const Produk = () => {
   const { scrollY } = useScroll();
