@@ -21,7 +21,7 @@ const News = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-center text-gray-800 mb-4"
         >
-          Sorotan Terbaru
+          Nusantara Terkini
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}

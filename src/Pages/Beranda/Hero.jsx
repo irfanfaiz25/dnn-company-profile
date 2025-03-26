@@ -73,7 +73,7 @@ const Hero = () => {
           />
           <div className="absolute inset-0 bg-black/60" />
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center text-white"
+            className="absolute inset-0 flex flex-col items-center justify-center px-4 text-white"
             initial={{ y: 20, opacity: 0 }}
             animate={{
               y: currentImage === index ? 0 : 20,
@@ -85,11 +85,13 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.8 }}
-              className="py-5 text-5xl font-bold font-display bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-primary-gold to-amber-100 bg-[length:200%_auto] animate-[var(--animate-shine)] transition-[background-position] ease-[var(--bounce-in)]"
+              className="py-5 text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-primary-gold to-amber-100 bg-[length:200%_auto] animate-[var(--animate-shine)] transition-[background-position] ease-[var(--bounce-in)]"
             >
               {item.title}
             </motion.h1>
-            <p className="max-w-3xl text-center text-xl">{item.description}</p>
+            <p className="max-w-3xl text-center text-base md:text-lg lg:text-xl">
+              {item.description}
+            </p>
           </motion.div>
         </motion.div>
       ))}

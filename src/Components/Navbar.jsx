@@ -92,7 +92,13 @@ const Navbar = () => {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`p-2 rounded-md ${
-                  isScrolled ? "text-gray-50" : "text-gray-800"
+                  location.pathname === "/sejarah" ||
+                  location.pathname === "/produk" ||
+                  location.pathname === "/"
+                    ? "text-gray-50"
+                    : isScrolled
+                    ? "text-gray-50"
+                    : "text-gray-800"
                 }`}
               >
                 {isMenuOpen ? (
