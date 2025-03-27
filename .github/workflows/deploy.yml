@@ -27,7 +27,7 @@ jobs:
           npm run build
 
       #Deploy the build folder to FTP Server
-      - name: FTP Deploy
+      - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -36,3 +36,5 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/
           server-dir: /
+          protocol: ftps # Use FTPS instead of FTP
+          passive: true # Enable passive mode
