@@ -89,6 +89,15 @@ const Footer = () => {
                 </svg>
                 <a href="tel:+622983539040">0298-3539-040</a>
               </li>
+              <li className="flex items-center gap-2 hover:text-primary-gold transition-colors">
+                <a
+                  href="https://wa.me/6285117225313"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  (WhatsApp) +62851-1722-5313
+                </a>
+              </li>
             </ul>
           </motion.div>
 
