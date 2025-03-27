@@ -1,7 +1,7 @@
 import Achievements from "./Achievements";
 import Branches from "./Branches";
 import Testimonials from "./Testimonials";
-import TeamImage from "../../assets/img/teams.jpg";
+import TeamImage from "../../assets/img/teams.jpeg";
 import { motion } from "motion/react";
 import { useRef } from "react";
 
@@ -51,7 +51,7 @@ const TimManajemen = () => {
             alt="Team Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-black/60" />
         </motion.div>
 
         {/* Content Container */}
