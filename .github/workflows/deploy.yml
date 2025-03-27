@@ -36,5 +36,4 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/
           server-dir: /
-          protocol: ftps # Use FTPS instead of FTP
-          passive: true # Enable passive mode
+          timeout: 190000
