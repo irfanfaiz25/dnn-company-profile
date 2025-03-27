@@ -78,7 +78,7 @@ const Kontak = () => {
             </div>
             <h3 className="font-semibold text-gray-900 mb-1">Hubungi Kami</h3>
             <a
-              href="tel:+6221234567890"
+              href="tel:+622983539040"
               className="text-gray-600 text-sm hover:text-red-500"
             >
               0298-3539-040

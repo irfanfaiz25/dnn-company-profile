@@ -20,7 +20,7 @@ const Footer = () => {
     {
       id: 3,
       name: "instagram",
-      url: "#instagram",
+      url: "https://www.instagram.com/dwipa_nusantaraniaga/",
       icon: <Instagram />,
     },
     {
@@ -87,7 +87,7 @@ const Footer = () => {
                 >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <a href="tel:+6221234567890">+62 123 4567 890</a>
+                <a href="tel:+622983539040">0298-3539-040</a>
               </li>
             </ul>
           </motion.div>
@@ -113,7 +113,7 @@ const Footer = () => {
                 <Link href="/produk">Produk Kami</Link>
               </li>
               <li className="hover:text-primary-gold transition-colors">
-                <Link href="/revolusi-rasa">Revolusi Dalam Sorotan</Link>
+                <Link href="/revolusi-rasa">Revolusi Rasa</Link>
               </li>
             </ul>
           </motion.div>
