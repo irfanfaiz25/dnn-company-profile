@@ -32,7 +32,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 md:px-6 xl:px-24 py-16 md:py-24 bg-gradient-to-t from-primary-gold via-amber-100 to-white">
+    <div className="mx-auto min-h-screen px-4 md:px-6 xl:px-24 py-16 md:py-24 bg-gradient-to-t from-primary-gold via-amber-100 to-white">
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

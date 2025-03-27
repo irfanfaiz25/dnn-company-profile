@@ -62,7 +62,7 @@ const Achievements = () => {
     },
   ];
   return (
-    <div className="mx-auto py-16 md:py-24 bg-gradient-to-t from-white via-yellow-50 to-primary-gold/20">
+    <div className="mx-auto min-h-screen py-16 md:py-24 bg-gradient-to-t from-white via-yellow-50 to-primary-gold/20">
       <div className="flex flex-col justify-center items-center mb-10 md:mb-16 px-4 md:px-14">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

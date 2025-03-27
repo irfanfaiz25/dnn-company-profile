@@ -48,7 +48,7 @@ const Branches = () => {
   ];
 
   return (
-    <div className="mx-auto py-16 md:py-24 bg-white">
+    <div className="mx-auto min-h-screen py-16 md:py-24 bg-white">
       <div className="flex flex-col justify-center items-center mb-10 md:mb-16 px-4 md:px-14">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -100,7 +100,10 @@ const Branches = () => {
 
             <div className="relative">
               <div className="flex items-center mb-3">
-                <MapPin size={20} className="text-primary-gold mr-2 flex-shrink-0" />
+                <MapPin
+                  size={20}
+                  className="text-primary-gold mr-2 flex-shrink-0"
+                />
                 <h3 className="text-xl md:text-2xl font-display font-bold text-gray-800 group-hover:text-primary-gold transition-colors">
                   {branch.city}
                 </h3>
@@ -114,7 +117,10 @@ const Branches = () => {
                   <span>{branch.region}</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-500">
-                  <Calendar size={16} className="mr-2 text-primary-gold flex-shrink-0" />
+                  <Calendar
+                    size={16}
+                    className="mr-2 text-primary-gold flex-shrink-0"
+                  />
                   <span>Established {branch.established}</span>
                 </div>
               </div>
