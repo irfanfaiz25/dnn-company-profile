@@ -62,8 +62,8 @@ const Achievements = () => {
     },
   ];
   return (
-    <div className="h-screen mx-auto py-24 flex flex-col justify-center bg-gradient-to-t from-white via-yellow-50 to-primary-gold/20">
-      <div className="flex flex-col items-center mb-16">
+    <div className="mx-auto py-16 md:py-24 bg-gradient-to-t from-white via-yellow-50 to-primary-gold/20">
+      <div className="flex flex-col justify-center items-center mb-10 md:mb-16 px-4 md:px-14">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ const Achievements = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-gray-600 max-w-3xl mb-16"
+          className="text-center text-gray-600 max-w-3xl mb-10 md:mb-16 px-4"
         >
           Setiap pencapaian kami merupakan bukti nyata dari komitmen untuk
           memberikan yang terbaik. Didukung oleh tim profesional yang
@@ -96,7 +96,7 @@ const Achievements = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="px-4 xl:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="px-4 md:px-8 xl:px-24 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
       >
         {stats.map((stat, index) => (
           <motion.div
@@ -111,7 +111,7 @@ const Achievements = () => {
             }}
             className="group hover:-translate-y-2 transition-all duration-300"
           >
-            <div className="h-52 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 px-6 py-6 flex flex-col justify-center items-center relative overflow-hidden">
+            <div className="h-auto py-10 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 px-4 md:px-6 flex flex-col justify-center items-center relative overflow-hidden">
               <div
                 className={`${stat.color} h-16 w-16 rounded-full flex justify-center items-center transform group-hover:scale-110 transition-transform duration-300 mb-4`}
               >
@@ -123,7 +123,7 @@ const Achievements = () => {
               </div>
               <div className="relative z-10 text-center">
                 <motion.h1
-                  className="text-4xl font-bold font-display text-gray-800 mb-1"
+                  className="text-3xl md:text-4xl font-bold font-display text-gray-800 mb-1"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: stat.delay + 0.2 }}

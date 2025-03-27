@@ -32,7 +32,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="mx-auto h-screen flex flex-col justify-center px-4 md:px-6 xl:px-24 py-24 bg-gradient-to-t from-primary-gold via-amber-100 to-white">
+    <div className="mx-auto px-4 md:px-6 xl:px-24 py-16 md:py-24 bg-gradient-to-t from-primary-gold via-amber-100 to-white">
       <div className="flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-gray-600 max-w-2xl mb-16"
+          className="text-center text-gray-600 max-w-2xl mb-10 md:mb-16 px-4"
         >
           Kisah inspiratif dan pengalaman berharga dari para talenta terbaik
           yang telah berkembang bersama dalam membangun kesuksesan perusahaan.
@@ -80,7 +80,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, staggerChildren: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -99,7 +99,7 @@ const Testimonials = () => {
                 y: -8,
                 transition: { duration: 0.3 },
               }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
             >
               <MessageSquareQuote
                 size={40}
@@ -114,7 +114,7 @@ const Testimonials = () => {
               >
                 <div className="relative">
                   <motion.div
-                    className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-gold"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-primary-gold"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -151,7 +151,7 @@ const Testimonials = () => {
                 </div>
               </motion.div>
               <motion.p
-                className="text-gray-700 leading-relaxed"
+                className="text-gray-700 leading-relaxed text-sm md:text-base"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.4 }}
@@ -164,12 +164,14 @@ const Testimonials = () => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.5 }}
               >
-                <p className="text-sm text-gray-500">{testimonial.date}</p>
+                <p className="text-xs md:text-sm text-gray-500">
+                  {testimonial.date}
+                </p>
                 <div className="flex text-primary-gold">
                   {[...Array(5)].map((_, i) => (
                     <motion.svg
                       key={i}
-                      className="w-4 h-4"
+                      className="w-3 h-3 md:w-4 md:h-4"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       initial={{ opacity: 0, scale: 0 }}

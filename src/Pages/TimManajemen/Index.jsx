@@ -16,12 +16,12 @@ const TimManajemen = () => {
     {
       id: 1,
       name: "Irwan Yunanto",
-      position: "Direktur Utama",
+      position: "Manajer Utama",
     },
     {
       id: 2,
       name: "Amirudin Zuhri",
-      position: "Direktur Keuangan",
+      position: "Wakil Manajer",
     },
     {
       id: 3,
@@ -55,7 +55,7 @@ const TimManajemen = () => {
         </motion.div>
 
         {/* Content Container */}
-        <div className="container mx-auto px-14 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative z-10 py-20">
+        <div className="container mx-auto px-4 md:px-0 lg:px-14 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative z-10 py-20">
           {/* Text Content */}
           <motion.div
             className="md:w-1/2 text-left md:pr-8 mb-12 md:mb-0"
