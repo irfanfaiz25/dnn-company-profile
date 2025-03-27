@@ -33,7 +33,7 @@ const SorotanDetail = () => {
       <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white via-yellow-100 to-primary-gold">
         <h2 className="text-2xl font-bold mb-4">Post tidak ditemukan</h2>
         <Link
-          to="/revolusi-dalam-sorotan"
+          to="/revolusi-rasa"
           className="flex items-center gap-2 px-6 py-3 bg-primary-gold hover:bg-yellow-600 text-white rounded-md transition-colors duration-200"
         >
           <ChevronLeftCircle className="w-5 h-5" />

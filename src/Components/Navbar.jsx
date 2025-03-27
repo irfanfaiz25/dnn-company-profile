@@ -237,10 +237,10 @@ const Navbar = () => {
                 </ul>
                 <div className="flex items-center justify-end">
                   <Link
-                    to="/revolusi-dalam-sorotan"
+                    to="/revolusi-rasa"
                     className="relative inline-flex items-center justify-center p-4 px-6 py-2.5 overflow-hidden font-medium text-gray-50 transition duration-300 ease-out border-2 border-primary-gold rounded-full shadow-md group"
                   >
-                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-gray-800 duration-300 -translate-x-full bg-primary-gold border-primary-gold group-hover:translate-x-0 ease">
+                    <span className="absolute inset-0 flex items-center justify-center w-full h-full text-gray-50 duration-300 -translate-x-full bg-primary-gold border-primary-gold group-hover:translate-x-0 ease">
                       <svg
                         className="w-6 h-6"
                         fill="none"
@@ -268,11 +268,9 @@ const Navbar = () => {
                           : "text-gray-800"
                       } border-primary-gold transition-all duration-300 transform group-hover:translate-x-full ease`}
                     >
-                      Revolusi Dalam Sorotan
+                      Revolusi Rasa
                     </span>
-                    <span className="relative invisible">
-                      Revolusi Dalam Sorotan
-                    </span>
+                    <span className="relative invisible">Revolusi Rasa</span>
                   </Link>
                 </div>
               </div>
@@ -347,10 +345,10 @@ const Navbar = () => {
             ))}
             <div className="pt-3 pb-1 w-full">
               <Link
-                to="/revolusi-dalam-sorotan"
+                to="/revolusi-rasa"
                 className="block w-full px-3 py-3 text-base font-medium text-center text-gray-900 bg-primary-gold rounded-full hover:bg-primary-gold/90"
               >
-                Revolusi Dalam Sorotan
+                Revolusi Rasa
               </Link>
             </div>
           </div>

@@ -299,7 +299,7 @@ const Produk = () => {
                       e.stopPropagation(); // Prevent triggering parent onClick
                       const message = `Halo, saya ingin memesan produk ${product.name}. Mohon informasi lebih lanjut.`;
                       const encodedMessage = encodeURIComponent(message);
-                      const whatsappUrl = `https://wa.me/+6285339462767?text=${encodedMessage}`;
+                      const whatsappUrl = `https://wa.me/+6285117225313?text=${encodedMessage}`;
                       window.open(whatsappUrl, "_blank");
                     }}
                   >

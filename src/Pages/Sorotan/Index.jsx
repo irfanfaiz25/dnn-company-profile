@@ -43,7 +43,7 @@ const Sorotan = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-3xl md:text-6xl text-white font-semibold font-display"
           >
-            Revolusi Dalam Sorotan
+            Revolusi Rasa
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ const Sorotan = () => {
               </p>
               <div className="flex w-full justify-start">
                 <Link
-                  to={`/revolusi-dalam-sorotan/${post.slug}`}
+                  to={`/revolusi-rasa/${post.slug}`}
                   className="text-gray-500 font-semibold hover:text-primary-gold transition-colors duration-300 flex items-center gap-2"
                 >
                   Baca Selengkapnya

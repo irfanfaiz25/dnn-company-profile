@@ -113,9 +113,7 @@ const Footer = () => {
                 <Link href="/produk">Produk Kami</Link>
               </li>
               <li className="hover:text-primary-gold transition-colors">
-                <Link href="/revolusi-dalam-sorotan">
-                  Revolusi Dalam Sorotan
-                </Link>
+                <Link href="/revolusi-rasa">Revolusi Dalam Sorotan</Link>
               </li>
             </ul>
           </motion.div>
