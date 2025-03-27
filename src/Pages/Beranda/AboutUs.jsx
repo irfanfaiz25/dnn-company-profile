@@ -14,7 +14,7 @@ const AboutUs = () => {
             className="md:w-1/2"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-800 mb-8">
-              Kisah Kami
+              Komitmen Kami
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-6">
               Berawal dari passion untuk menghadirkan cita rasa autentik

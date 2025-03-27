@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-center text-gray-800 mb-4"
             >
-              Keunggulan Produk Kami
+              Pusaka Warisan Nusantara
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -52,7 +52,7 @@ const FeaturedProducts = () => {
             </div>
             <div className="p-6 bg-gradient-to-b from-white to-gray-50">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Kualitas Premium
+                Bahan Alami Berkualitas
               </h3>
               <p className="text-gray-600 mb-4">
                 Dipilih dari bahan berkualitas terbaik, diproses dengan standar
@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
             </div>
             <div className="p-6 bg-gradient-to-b from-white to-gray-50">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Cita Rasa Autentik
+                Cita Rasa Khas Nusantara
               </h3>
               <p className="text-gray-600 mb-4">
                 Memadukan resep tradisional dengan teknologi modern untuk
@@ -102,7 +102,7 @@ const FeaturedProducts = () => {
             </div>
             <div className="p-6 bg-gradient-to-b from-white to-gray-50">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Inovasi Berkelanjutan
+                Berbakti Untuk Nusantara
               </h3>
               <p className="text-gray-600 mb-4">
                 Terus berinovasi dalam mengembangkan produk untuk memberikan

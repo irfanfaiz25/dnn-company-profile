@@ -21,7 +21,7 @@ const News = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-center text-gray-800 mb-4"
         >
-          Sorotan Terbaru
+          Nusantara Terkini
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +69,7 @@ const News = () => {
                   {limitText(post.description, 290)}
                 </p>
                 <Link
-                  to={`/revolusi-dalam-sorotan/${post.slug}`}
+                  to={`/revolusi-rasa/${post.slug}`}
                   className="mt-4 text-gray-500 font-semibold hover:text-primary-gold transition-colors duration-300 flex items-center gap-2"
                 >
                   Baca Selengkapnya
@@ -88,7 +88,7 @@ const News = () => {
           className="flex justify-center mt-12"
         >
           <Link
-            to="/revolusi-dalam-sorotan"
+            to="/revolusi-rasa"
             className="px-4 py-2.5 md:px-8 md:py-4 bg-primary-gold text-white rounded-md font-semibold text-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Jelajahi Lebih Banyak Sorotan

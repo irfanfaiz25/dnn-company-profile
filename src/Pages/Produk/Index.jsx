@@ -69,10 +69,10 @@ const Produk = () => {
       description:
         "Kedhaton Nusantara adalah perwujudan sempurna dari warisan rasa tradisional yang dibalut dalam kemewahan modern. Setiap batang menghadirkan pengalaman merokok yang tak tertandingi, hasil dari seleksi tembakau terbaik dan proses produksi yang mengutamakan kualitas premium.",
       details: {
-        blend: "Premium Virginia & Oriental Blend",
-        characteristic: "Full Bodied, Rich",
-        aroma: "Woody dengan Hint Vanilla",
-        packaging: "12 Batang Premium",
+        racikan: "Tembakau Virginia & Oriental Premium",
+        karakter: "Kuat",
+        rempah: "Tembakau Premium & Cengkeh",
+        kemasan: "12 Batang Premium",
       },
       image: DetailKedhaton,
       packImage: PackKedhaton,
@@ -86,10 +86,10 @@ const Produk = () => {
       description:
         "Kedhaton Nusantara merupakan manifestasi dari keanggunan cita rasa klasik yang dipadukan dengan sentuhan modernitas. Diproduksi secara eksklusif dengan tembakau pilihan dari lembah-lembah subur Nusantara, setiap batang merupakan hasil kurasi yang ketat dan proses pemeraman yang sempurna.",
       details: {
-        blend: "Premium Virginia & Oriental",
-        characteristic: "Medium Bodied, Smooth",
-        aroma: "Floral dengan Hint Kayu Manis",
-        packaging: "12 Batang Premium",
+        racikan: "Tembakau Virginia & Oriental Premium",
+        karakter: "Sedang dan Lembut",
+        rempah: "Kayu Manis & Cengkeh",
+        kemasan: "12 Batang Premium",
       },
       image: DetailMataram,
       packImage: PackMataram,
@@ -103,10 +103,10 @@ const Produk = () => {
       description:
         "Dinasti Nusantara merupakan karya istimewa yang menggabungkan keagungan rasa klasik dengan inovasi modern. Diproduksi dalam jumlah terbatas, setiap batang menawarkan pengalaman eksklusif dengan tembakau pilihan yang diproses menggunakan teknik tradisional yang telah disempurnakan.",
       details: {
-        blend: "Special Virginia & Oriental Selection",
-        characteristic: "Full Bodied, Complex",
-        aroma: "Spicy dengan Hint Karamel",
-        packaging: "12 Batang Premium",
+        racikan: "Tembakau Virginia & Oriental Pilihan",
+        karakter: "Kuat dan Kompleks",
+        rempah: "Tembakau Premium & Kayu Manis",
+        kemasan: "12 Batang Premium",
       },
       image: DetailDinasti,
       packImage: PackDinasti,
@@ -283,13 +283,28 @@ const Produk = () => {
                 <h1 className="text-3xl md:text-5xl font-bold font-display text-gray-800 mb-2 md:mb-4">
                   {product.name}
                 </h1>
-                <div className="flex items-center gap-2 md:gap-4 mb-6">
-                  <span className="text-xs md:text-base px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium shadow-md">
-                    {product.series}
-                  </span>
-                  <span className="text-xs md:text-base px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium shadow-md">
-                    {product.stock}
-                  </span>
+                <div className="flex items-center justify-between gap-2 md:gap-4 mb-6">
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <span className="text-xs md:text-base px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium shadow-md">
+                      {product.series}
+                    </span>
+                    <span className="text-xs md:text-base px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium shadow-md">
+                      {product.stock}
+                    </span>
+                  </div>
+                  {/* order products button */}
+                  <button
+                    className="text-xs md:text-base px-6 py-1.5 bg-secondary-green hover:bg-secondary-green/90 text-gray-50 rounded-full font-medium shadow-md"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering parent onClick
+                      const message = `Halo, saya ingin memesan produk ${product.name}. Mohon informasi lebih lanjut.`;
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/+6285117225313?text=${encodedMessage}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}
+                  >
+                    Order
+                  </button>
                 </div>
               </motion.div>
 
