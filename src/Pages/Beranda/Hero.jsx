@@ -3,12 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import Picture1 from "../../assets/img/picture1.jpg";
 import Picture2 from "../../assets/img/picture2.jpg";
 import Picture3 from "../../assets/img/picture3.jpg";
+import { useApi } from "../../hooks/useApi";
+import { fetchHeroData } from "../../services/api";
 
 const Hero = () => {
   const containerRef = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
 
-  const imagesCarousel = [
+  const { data, loading, error } = useApi(fetchHeroData);
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+
+  // Default carousel data as fallback
+  const defaultImagesCarousel = [
     {
       id: 1,
       image: Picture1,
@@ -32,27 +38,62 @@ const Hero = () => {
     },
   ];
 
+  // Determine which data to use - API data or fallback
+  const carouselData = data && data.length > 0 ? data : defaultImagesCarousel;
+
   // Auto slide effect
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % imagesCarousel.length);
+      setCurrentImage((prev) => (prev + 1) % carouselData.length);
     }, 6000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [carouselData.length]);
 
-  // Track scroll progress for the entire component
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  // Loading overlay component
+  const LoadingOverlay = () => (
+    <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/70">
+      <div className="flex flex-col items-center">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-primary-gold border-t-transparent"></div>
+        <p className="mt-4 text-white">Loading content...</p>
+      </div>
+    </div>
+  );
+
+  // Error overlay component
+  const ErrorOverlay = () => (
+    <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/70">
+      <div className="max-w-md rounded-lg bg-white p-6 text-center shadow-lg">
+        <h3 className="mb-2 text-xl font-bold text-red-600">
+          Error Loading Content
+        </h3>
+        <p className="mb-4 text-gray-700">
+          {error?.message ||
+            "Failed to load hero content. Please try again later."}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="rounded bg-primary-gold px-4 py-2 text-white hover:bg-amber-600"
+        >
+          Refresh Page
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden"
     >
-      {imagesCarousel.map((item, index) => (
+      {/* Show loading overlay while fetching data */}
+      {loading && <LoadingOverlay />}
+
+      {/* Show error overlay if there's an error */}
+      {error && <ErrorOverlay />}
+
+      {/* Render carousel items */}
+      {carouselData.map((item, index) => (
         <motion.div
           key={item.id}
           className="absolute inset-0"
@@ -67,9 +108,16 @@ const Hero = () => {
           }}
         >
           <img
-            src={item.image}
+            src={data && data.length > 0 ? baseUrl + item.image : item.image}
             alt={item.title}
             className="h-full w-full object-cover"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                defaultImagesCarousel[
+                  index % defaultImagesCarousel.length
+                ].image;
+            }}
           />
           <div className="absolute inset-0 bg-black/60" />
           <motion.div

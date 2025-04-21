@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Building2, Users2, UsersRound } from "lucide-react";
+import { Building2, UserCheck, Users2 } from "lucide-react";
 import { useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
@@ -53,7 +53,7 @@ const Achievements = () => {
       delay: 0.4,
     },
     {
-      icon: <UsersRound size={32} />,
+      icon: <UserCheck size={32} />,
       count: "1200",
       label: "Customer",
       color: "bg-tertiary-red",
