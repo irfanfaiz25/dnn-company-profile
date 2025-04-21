@@ -140,3 +140,74 @@ export const fetchSelectedPostsData = async () => {
     throw error;
   }
 };
+
+// Function to fetch user testimonial headline data
+export const fetchUserTestimonialHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/beranda-testimonial");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the UserTestimonialHeadline component
+      const UserTestimonialHeadlineData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return UserTestimonialHeadlineData;
+    } else {
+      throw new Error(
+        response.data.message ||
+          "Failed to fetch user testimonial headline data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching user testimonial headline data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch user testimonial section data
+export const fetchUserTestimonialData = async () => {
+  try {
+    const response = await api.get("/testimonials/user");
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the UserTestimonial component
+      const UserTestimonialData = response.data.data.map((item) => ({
+        id: item.id,
+        name: item.name,
+        city: item.city,
+        testimonial: item.testimonial,
+        date: item.created_at,
+      }));
+
+      return UserTestimonialData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch user testimonial data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching user testimonial data:", error);
+    throw error;
+  }
+};
+
+// Function to submit a new testimonial
+export const submitTestimonial = async (testimonialData) => {
+  try {
+    const response = await api.post("/testimonials", testimonialData);
+
+    // Check if the request was successful
+    if (response.data.success) {
+      return response.data;
+    } else {
+      throw new Error(response.data.message || "Failed to submit testimonial");
+    }
+  } catch (error) {
+    console.error("Error submitting testimonial:", error);
+    throw error;
+  }
+};
