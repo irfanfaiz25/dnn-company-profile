@@ -472,6 +472,7 @@ export const fetchProductHeroData = async () => {
         id: response.data.data[0].id,
         title: response.data.data[0].title,
         description: response.data.data[0].description,
+        image: response.data.data[0].image_url,
       };
 
       return ProductHeroData;

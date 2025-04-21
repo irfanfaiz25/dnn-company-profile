@@ -163,7 +163,7 @@ const Produk = () => {
     loading: productLoading,
     error: productError,
   } = useApi(fetchProductData);
-
+  console.log(heroData);
   const baseUrl = import.meta.env.VITE_BASE_URL;
 
   return (
