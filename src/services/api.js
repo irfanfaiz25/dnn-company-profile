@@ -351,3 +351,57 @@ export const fetchTimAchievementData = async () => {
     throw error;
   }
 };
+
+// Function to fetch tim branch headline data
+export const fetchTimBranchHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/tim-branches");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimBranchHeadline component
+      const TimBranchHeadlineData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return TimBranchHeadlineData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim branch headline data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim branch headline data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch tim branch section data
+export const fetchTimBranchData = async () => {
+  try {
+    const response = await api.get("/branches");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimBranch component
+      const TimBranchData = response.data.data.map((item) => ({
+        id: item.id,
+        city: item.city,
+        region: item.region,
+        established: item.established,
+        address: item.address,
+      }));
+
+      return TimBranchData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim branch data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim branch data:", error);
+    throw error;
+  }
+};
