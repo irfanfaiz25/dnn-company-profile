@@ -459,3 +459,63 @@ export const fetchTimTestimonialData = async () => {
     throw error;
   }
 };
+
+// Function to fetch product hero section data
+export const fetchProductHeroData = async () => {
+  try {
+    const response = await api.get("/sections/produk-hero");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the ProductHero component
+      const ProductHeroData = {
+        id: response.data.data[0].id,
+        title: response.data.data[0].title,
+        description: response.data.data[0].description,
+      };
+
+      return ProductHeroData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch product hero data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching product hero data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch product section data
+export const fetchProductData = async () => {
+  try {
+    const response = await api.get("/products");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimTestimonial component
+      const ProductsData = response.data.data.map((item) => ({
+        name: item.name,
+        name: item.name,
+        series: item.series,
+        stock: item.stock,
+        description: item.description,
+        racikan: item.racikan,
+        karakter: item.karakter,
+        rempah: item.rempah,
+        kemasan: item.kemasan,
+        detailImage: item.detailImage,
+        packImage: item.packImage,
+      }));
+
+      return ProductsData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim testimonial data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim testimonial data:", error);
+    throw error;
+  }
+};
