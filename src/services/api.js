@@ -493,7 +493,7 @@ export const fetchProductData = async () => {
 
     // Check if the request was successful
     if (response.data.success) {
-      // Transform the data to match the format expected by the TimTestimonial component
+      // Transform the data to match the format expected by the Product component
       const ProductsData = response.data.data.map((item) => ({
         name: item.name,
         name: item.name,
@@ -510,12 +510,65 @@ export const fetchProductData = async () => {
 
       return ProductsData;
     } else {
+      throw new Error(response.data.message || "Failed to fetch products data");
+    }
+  } catch (error) {
+    console.error("Error fetching products data:", error);
+    throw error;
+  }
+};
+
+// Fucntion to fetch kontak headline data
+export const fetchKontakHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/kontak-main");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the KontakHeadline component
+      const KontakHeadline = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return KontakHeadline;
+    } else {
       throw new Error(
-        response.data.message || "Failed to fetch tim testimonial data"
+        response.data.message || "Failed to fetch kontak headline data"
       );
     }
   } catch (error) {
-    console.error("Error fetching tim testimonial data:", error);
+    console.error("Error fetching kontak headline data:", error);
+    throw error;
+  }
+};
+
+// Fucntion to fetch kontak section data
+export const fetchKontakData = async () => {
+  try {
+    const response = await api.get("/contact");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the Kontak component
+      const KontakData = {
+        id: response.data.data.id,
+        address: response.data.data.address,
+        subtitle: response.data.data.subtitle,
+        phone: response.data.data.phone,
+        whatsapp: response.data.data.whatsapp,
+        email: response.data.data.email,
+        weekdayOpen: response.data.data.weekday_open,
+        weekendOpen: response.data.data.weekend_open,
+      };
+
+      return KontakData;
+    } else {
+      throw new Error(response.data.message || "Failed to fetch kontak data");
+    }
+  } catch (error) {
+    console.error("Error fetching kontak data:", error);
     throw error;
   }
 };
