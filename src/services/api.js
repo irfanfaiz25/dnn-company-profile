@@ -58,3 +58,56 @@ export const fetchAboutData = async () => {
     throw error;
   }
 };
+
+// Function to fetch featured products headline data
+export const fetchFeaturedProductsHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/beranda-product");
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the FeaturedProductsHeadline component
+      const FeaturedProductsHeadlineData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return FeaturedProductsHeadlineData;
+    } else {
+      throw new Error(
+        response.data.message ||
+          "Failed to fetch featured products headline data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching featured products headline data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch featured products section data
+export const fetchFeaturedProductsData = async () => {
+  try {
+    const response = await api.get("/sections/beranda-product");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the FeaturedProducts component
+      const FeaturedProductsData = response.data.data.map((item) => ({
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        image: item.image_url,
+      }));
+
+      return FeaturedProductsData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch featured products data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching featured products data:", error);
+    throw error;
+  }
+};
