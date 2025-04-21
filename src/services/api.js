@@ -111,3 +111,32 @@ export const fetchFeaturedProductsData = async () => {
     throw error;
   }
 };
+
+// Function to fetch selected posts data
+export const fetchSelectedPostsData = async () => {
+  try {
+    const response = await api.get("/beranda-posts");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the SelectedPosts component
+      const SelectedPostsData = response.data.data.map((item) => ({
+        id: item.id,
+        title: item.title,
+        date: item.date,
+        slug: item.slug,
+        content: item.content,
+        media: item.media,
+      }));
+
+      return SelectedPostsData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch selected posts data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching selected posts data:", error);
+    throw error;
+  }
+};
