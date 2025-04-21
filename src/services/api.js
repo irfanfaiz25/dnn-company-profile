@@ -19,7 +19,6 @@ export const fetchHeroData = async () => {
         id: item.id,
         title: item.title,
         description: item.description,
-        // If image_url is null, you might want to use a default image
         image: item.image_url,
         // Add any other fields needed by your component
       }));
@@ -30,6 +29,32 @@ export const fetchHeroData = async () => {
     }
   } catch (error) {
     console.error("Error fetching hero data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch about section data
+export const fetchAboutData = async () => {
+  try {
+    const response = await api.get("/sections/beranda-about");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the About component
+      const aboutData = response.data.data.map((item) => ({
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        image: item.image_url,
+        content: item.content,
+      }));
+
+      return aboutData;
+    } else {
+      throw new Error(response.data.message || "Failed to fetch about data");
+    }
+  } catch (error) {
+    console.error("Error fetching about data:", error);
     throw error;
   }
 };
