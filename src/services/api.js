@@ -271,3 +271,28 @@ export const fetchVisiMisiData = async (name) => {
     throw error;
   }
 };
+
+// Function to fetch tim hero section data
+export const fetchTimHeroData = async () => {
+  try {
+    const response = await api.get("/sections/tim-hero");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimHero component
+      const TimHeroData = {
+        id: response.data.data[0].id,
+        title: response.data.data[0].title,
+        description: response.data.data[0].description,
+        image: response.data.data[0].image_url,
+      };
+
+      return TimHeroData;
+    } else {
+      throw new Error(response.data.message || "Failed to fetch tim hero data");
+    }
+  } catch (error) {
+    console.error("Error fetching tim hero data:", error);
+    throw error;
+  }
+};
