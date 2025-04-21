@@ -296,3 +296,58 @@ export const fetchTimHeroData = async () => {
     throw error;
   }
 };
+
+// Function to fetch tim achievement headline data
+export const fetchTimAchievementHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/tim-achievement");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimAchievementHeadline component
+      const TimAchievementHeadlineData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return TimAchievementHeadlineData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim achievement headline data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim achievement headline data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch tim achievement section data
+export const fetchTimAchievementData = async () => {
+  try {
+    const response = await api.get("/achievements");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimAchievement component
+      const TimAchievementData = response.data.data.map((item) => ({
+        id: item.id,
+        icon: item.icon,
+        count: item.count,
+        label: item.label,
+        color: item.color,
+        iconColor: item.iconColor,
+      }));
+
+      return TimAchievementData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim achievement data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim achievement data:", error);
+    throw error;
+  }
+};
