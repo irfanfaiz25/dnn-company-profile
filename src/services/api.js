@@ -211,3 +211,63 @@ export const submitTestimonial = async (testimonialData) => {
     throw error;
   }
 };
+
+// Function to fetch sejarah section data
+export const fetchSejarahData = async () => {
+  try {
+    const response = await api.get("/sections/sejarah");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the Sejarah component
+      const SejarahData = {
+        id: response.data.data[0].id,
+        title: response.data.data[0].title,
+        description: response.data.data[0].description,
+        image: response.data.data[0].image_url,
+      };
+
+      return SejarahData;
+    } else {
+      throw new Error(response.data.message || "Failed to fetch sejarah data");
+    }
+  } catch (error) {
+    console.error("Error fetching sejarah data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch visi-misi section data
+export const fetchVisiMisiData = async (name) => {
+  try {
+    const response = await api.get(`/visi-misi/${name}`);
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the VisiMisi component
+      let VisiMisiData;
+
+      if (name === "visi") {
+        VisiMisiData = {
+          id: response.data.data.id,
+          content: response.data.data.content,
+        };
+      } else {
+        VisiMisiData = response.data.data.map((item) => ({
+          id: item.id,
+          content: item.content,
+          orderNumber: item.order_number,
+        }));
+      }
+
+      return VisiMisiData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch visi-misi data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching visi-misi data:", error);
+    throw error;
+  }
+};
