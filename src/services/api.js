@@ -1,4 +1,5 @@
 import axios from "axios";
+import { image } from "motion/react-client";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_BASE_API_URL,
@@ -402,6 +403,59 @@ export const fetchTimBranchData = async () => {
     }
   } catch (error) {
     console.error("Error fetching tim branch data:", error);
+    throw error;
+  }
+};
+
+// Fucntion to fetch tim testimonial headline data
+export const fetchTimTestimonialHeadlineData = async () => {
+  try {
+    const response = await api.get("/headline/tim-testimonial");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimTestimonialHeadline component
+      const TimTestimonialHeadlineData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        subtitle: response.data.data.subtitle,
+      };
+
+      return TimTestimonialHeadlineData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim testimonial headline data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim testimonial headline data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch tim testimonial section data
+export const fetchTimTestimonialData = async () => {
+  try {
+    const response = await api.get("/testimonials/team");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the TimTestimonial component
+      const TimTestimonialData = response.data.data.map((item) => ({
+        name: item.name,
+        position: item.position,
+        message: item.message,
+        image: item.image_url,
+      }));
+
+      return TimTestimonialData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch tim testimonial data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching tim testimonial data:", error);
     throw error;
   }
 };
