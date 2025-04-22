@@ -65,7 +65,7 @@ const Navbar = () => {
     fetchInformationDataByName("company_name")
   );
 
-  const BaseUrl = import.meta.env.VITE_APP_BASE_URL;
+  const BaseUrl = import.meta.env.VITE_BASE_URL;
 
   return (
     <nav className={`w-full fixed top-0 z-[999]`}>

@@ -10,6 +10,7 @@ import Produk from "./Pages/Produk/Index";
 import Sorotan from "./Pages/Sorotan/Index";
 import SorotanDetail from "./Pages/Sorotan/SorotanDetail";
 import Kontak from "./Pages/Kontak/Index";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   const location = useLocation();
@@ -18,9 +19,15 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  // Check if the current route is the NotFound page
+  const is404Page = location.pathname !== "/" && 
+    !["/sejarah", "/tim-manajemen", "/produk", "/kontak", "/revolusi-rasa"].some(path => 
+      location.pathname === path || location.pathname.startsWith(path + "/")
+    );
+
   return (
     <>
-      <Navbar />
+      {!is404Page && <Navbar />}
       <Routes>
         <Route path="/" element={<Beranda />} />
         <Route path="/sejarah" element={<Sejarah />} />
@@ -29,8 +36,9 @@ function App() {
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/revolusi-rasa" element={<Sorotan />} />
         <Route path="/revolusi-rasa/:slug" element={<SorotanDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {!is404Page && <Footer />}
     </>
   );
 }
