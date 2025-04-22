@@ -121,14 +121,14 @@ const Produk = () => {
 
   const handleProductClick = (productId) => {
     setSelectedProduct(productId);
-    const index = productData.findIndex((p) => p.id === productId);
+    const index = productData?.findIndex((p) => p.id === productId);
     const targetElement = detailRefs.current[index];
 
     if (targetElement) {
       const elementPosition = targetElement.getBoundingClientRect().top;
       const startPosition = window.pageYOffset;
       const distance = elementPosition;
-      const duration = 2000; // Increased duration (in ms) for slower scroll
+      const duration = 2000;
       let start = null;
 
       const animation = (currentTime) => {
@@ -136,7 +136,6 @@ const Produk = () => {
         const timeElapsed = currentTime - start;
         const progress = Math.min(timeElapsed / duration, 1);
 
-        // Easing function for smoother animation
         const easeInOutCubic = (progress) => {
           return progress < 0.5
             ? 4 * progress * progress * progress
@@ -278,50 +277,45 @@ const Produk = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 md:gap-16 w-full px-4 xl:px-24">
               {productData?.map((product, index) => (
                 <motion.div
-                  key={`product-${product.id}`}
+                  key={product.id}
                   className="group relative"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   whileHover={{ y: -20 }}
-                  onClick={() => handleProductClick(product.id)}
+                  onClick={() => handleProductClick(product?.id)}
                 >
                   <div className="w-full h-[500px] bg-gradient-to-br from-primary-gold/30 via-primary-gold/20 to-transparent backdrop-blur-sm rounded-3xl relative flex flex-col items-center justify-end pb-20 overflow-hidden">
-                    <motion.div
-                      key={`overlay-${product.id}`}
-                      className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
+                    <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <motion.img
-                      key={`pack-${product.id}`}
-                      src={product.packImage && baseUrl + product.packImage}
-                      alt={product.name}
+                      src={product?.packImage && baseUrl + product.packImage}
+                      alt={product?.name}
                       className="absolute top-2 w-[12rem] group-hover:scale-110 transition-transform duration-500"
                       initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.3 }}
                     />
                     <motion.div
-                      key={`info-${product.id}`}
                       className="text-center z-10 mt-8"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
                       <h2 className="text-3xl font-bold font-display text-gray-800 group-hover:text-primary-gold transition-colors duration-300">
-                        {product.name}
+                        {product?.name}
                       </h2>
                       <p className="text-gray-200 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {product.series}
+                        {product?.series}
                       </p>
                     </motion.div>
                   </div>
 
                   <motion.button
-                    key={`button-${product.id}`}
+                    // key={`button-${product?.id || index}`}
                     className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary-gold text-gray-50 px-5 py-2.5 rounded-full opacity-100 md:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => handleProductClick(product.id)}
+                    onClick={() => handleProductClick(product?.id)}
                   >
                     Lebih Lanjut
                   </motion.button>
@@ -339,19 +333,18 @@ const Produk = () => {
         ? null
         : productData?.map((product, index) => (
             <div
-              key={`detail-${product.id}`}
+              key={product.id}
               ref={(el) => (detailRefs.current[index] = el)}
               className={`w-full h-fit xl:h-[700px] ${
-                selectedProduct === product.id
+                selectedProduct === product?.id
                   ? "bg-gradient-to-br from-primary-gold via-yellow-100 to-white"
                   : "bg-white"
               } flex items-center justify-center px-4 py-16 md:px-8 xl:px-24 xl:py-0 transition-all duration-500 ${
-                selectedProduct === product.id ? "opacity-100" : "opacity-70"
+                selectedProduct === product?.id ? "opacity-100" : "opacity-70"
               }`}
             >
-              {selectedProduct === product.id && (
+              {selectedProduct === product?.id && (
                 <motion.button
-                  key={`back-button-${product.id}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -363,7 +356,6 @@ const Produk = () => {
                 </motion.button>
               )}
               <motion.div
-                key={`detail-content-${product.id}`}
                 className={`flex flex-col lg:flex-row ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 } gap-12 max-w-7xl mx-auto`}
@@ -371,15 +363,11 @@ const Produk = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <motion.div
-                  key={`detail-image-container-${product.id}`}
-                  className="lg:w-1/2 relative group hover:scale-105 transition-transform duration-1000"
-                >
+                <motion.div className="lg:w-1/2 relative group hover:scale-105 transition-transform duration-1000">
                   <motion.img
-                    key={`detail-image-${product.id}`}
-                    src={product.detailImage && baseUrl + product.detailImage}
+                    src={product?.detailImage && baseUrl + product.detailImage}
                     className="w-full h-[250px] md:h-[470px] object-cover rounded-3xl shadow-2xl"
-                    alt={`${product.name} Detail`}
+                    alt={`${product?.name} Detail`}
                     initial={{ opacity: 0, x: -60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
@@ -389,29 +377,28 @@ const Produk = () => {
 
                 <div className="lg:w-1/2 space-y-8">
                   <motion.div
-                    key={`detail-header-${product.id}`}
                     initial={{ opacity: 0, x: 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                   >
                     <h1 className="text-3xl md:text-5xl font-bold font-display text-gray-800 mb-2 md:mb-4">
-                      {product.name}
+                      {product?.name}
                     </h1>
                     <div className="flex items-center justify-between gap-2 md:gap-4 mb-6">
                       <div className="flex items-center gap-2 md:gap-4">
                         <span className="text-xs md:text-base px-4 py-1.5 bg-amber-600/50 text-amber-700 rounded-full font-medium shadow-md">
-                          {product.series}
+                          {product?.series}
                         </span>
                         <span className="text-xs md:text-base px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full font-medium shadow-md">
-                          {product.stock ? "Dalam Stok" : "Habis"}
+                          {product?.stock ? "Dalam Stok" : "Habis"}
                         </span>
                       </div>
                       <button
-                        key={`order-button-${product.id}`}
+                        key={`order-button-${product?.id || index}`}
                         className="text-xs md:text-base px-6 py-1.5 bg-secondary-green hover:bg-secondary-green/90 text-gray-50 rounded-full font-medium shadow-md"
                         onClick={(e) => {
                           e.stopPropagation();
-                          const message = `Halo, saya ingin memesan produk ${product.name}. Mohon informasi lebih lanjut.`;
+                          const message = `Halo, saya ingin memesan produk ${product?.name}. Mohon informasi lebih lanjut.`;
                           const encodedMessage = encodeURIComponent(message);
                           const whatsappUrl = `https://wa.me/${whatsappData?.value}?text=${encodedMessage}`;
                           window.open(whatsappUrl, "_blank");
@@ -423,27 +410,23 @@ const Produk = () => {
                   </motion.div>
 
                   <motion.div
-                    key={`detail-info-${product.id}`}
                     className="space-y-6"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4 }}
                   >
                     <p className="text-sm/5 md:text-lg/8 font-normal text-gray-600">
-                      {product.description}
+                      {product?.description}
                     </p>
 
                     <div className="grid grid-cols-2 gap-6 pt-6">
                       {[
-                        { label: "RACIKAN", value: product.racikan },
-                        { label: "KARAKTER", value: product.karakter },
-                        { label: "REMPAH", value: product.rempah },
-                        { label: "KEMASAN", value: product.kemasan },
+                        { label: "RACIKAN", value: product?.racikan },
+                        { label: "KARAKTER", value: product?.karakter },
+                        { label: "REMPAH", value: product?.rempah },
+                        { label: "KEMASAN", value: product?.kemasan },
                       ].map((item, i) => (
-                        <div
-                          key={`${product.id}-${item.label}`}
-                          className="space-y-2"
-                        >
+                        <div key={i} className="space-y-2">
                           <h3 className="text-gray-400 text-sm font-medium">
                             {item.label}
                           </h3>

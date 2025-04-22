@@ -496,7 +496,7 @@ export const fetchProductData = async () => {
     if (response.data.success) {
       // Transform the data to match the format expected by the Product component
       const ProductsData = response.data.data.map((item) => ({
-        name: item.name,
+        id: item.id,
         name: item.name,
         series: item.series,
         stock: item.stock,
