@@ -3,7 +3,11 @@ import Background from "../../assets/img/tobacco-leaf.jpg";
 import { useRef, useState } from "react";
 import { CircleArrowUp } from "lucide-react";
 import { useApi } from "../../hooks/useApi";
-import { fetchProductData, fetchProductHeroData } from "../../services/api";
+import {
+  fetchInformationDataByName,
+  fetchProductData,
+  fetchProductHeroData,
+} from "../../services/api";
 
 const Produk = () => {
   const { scrollY } = useScroll();
@@ -12,6 +16,12 @@ const Produk = () => {
 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const detailRefs = useRef([]);
+
+  const {
+    data: whatsappData,
+    loading: whatsappLoading,
+    error: whatsappError,
+  } = useApi(() => fetchInformationDataByName("whatsapp"));
 
   // Hero section skeleton component
   const HeroSkeleton = () => (
@@ -403,7 +413,7 @@ const Produk = () => {
                           e.stopPropagation();
                           const message = `Halo, saya ingin memesan produk ${product.name}. Mohon informasi lebih lanjut.`;
                           const encodedMessage = encodeURIComponent(message);
-                          const whatsappUrl = `https://wa.me/+6285339462767?text=${encodedMessage}`;
+                          const whatsappUrl = `https://wa.me/${whatsappData?.value}?text=${encodedMessage}`;
                           window.open(whatsappUrl, "_blank");
                         }}
                       >

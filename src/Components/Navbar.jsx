@@ -2,6 +2,8 @@ import { motion, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
 import Logo from "../assets/img/logo.png";
 import { Link, useLocation } from "react-router";
+import { useApi } from "../hooks/useApi";
+import { fetchInformationDataByName } from "../services/api";
 
 const Navbar = () => {
   const { scrollY } = useScroll();
@@ -59,6 +61,12 @@ const Navbar = () => {
     },
   ];
 
+  const { data, loading, error } = useApi(() =>
+    fetchInformationDataByName("company_name")
+  );
+
+  const BaseUrl = import.meta.env.VITE_APP_BASE_URL;
+
   return (
     <nav className={`w-full fixed top-0 z-[999]`}>
       <motion.div
@@ -75,7 +83,15 @@ const Navbar = () => {
           <div className="flex justify-between w-full h-[5rem] items-center">
             {/* Logo section */}
             <div className="flex space-x-3 items-center">
-              <img src={Logo} alt="logo" className="h-8 md:h-10" />
+              {loading ? (
+                <div className="h-8 md:h-10 w-8 md:w-10 bg-gray-200 animate-pulse rounded-md"></div>
+              ) : (
+                <img
+                  src={data?.image_url ? BaseUrl + data?.image_url : Logo}
+                  alt="logo"
+                  className="h-8 md:h-10"
+                />
+              )}
               <h4
                 className={`text-lg md:text-xl font-header font-semibold space-x-1 ${
                   isScrolled || isMenuOpen ? "text-gray-800" : "text-gray-50"

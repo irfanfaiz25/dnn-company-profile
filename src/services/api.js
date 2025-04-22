@@ -606,8 +606,10 @@ export const fetchRevolusiPostsData = async (page = 1, search = "") => {
   try {
     // Trim the search query and only include it if it's not empty
     const searchQuery = search.trim();
-    const url = `/posts?page=${page}${searchQuery ? `&search=${searchQuery}` : ''}`;
-    
+    const url = `/posts?page=${page}${
+      searchQuery ? `&search=${searchQuery}` : ""
+    }`;
+
     const response = await api.get(url);
 
     // Check if the request was successful
@@ -641,6 +643,63 @@ export const fetchRevolusiPostsData = async (page = 1, search = "") => {
     }
   } catch (error) {
     console.error("Error fetching revolusi posts data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch information data
+export const fetchInformationData = async () => {
+  try {
+    const response = await api.get("/informations");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data into a more usable format using reduce
+      const informationData = response.data.data.reduce((acc, item) => {
+        acc[item.name] = {
+          label: item.label,
+          value: item.value.trim().replace(/`/g, ""), // Remove backticks and trim
+          type: item.type,
+          image_url: item.image_url,
+        };
+        return acc;
+      }, {});
+      // Return the transformed data, which is now an object with keys matching the names from the API response and values containing the label, value, type, and image_url for each inf
+      return informationData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch information data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching information data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch information data by name
+export const fetchInformationDataByName = async (name) => {
+  try {
+    const response = await api.get(`/informations/${name}`);
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the Information component
+      const InformationData = {
+        label: response.data.data.label,
+        value: response.data.data.value.trim().replace(/`/g, ""), // Remove backticks and trim
+        type: response.data.data.type,
+        image_url: response.data.data.image_url,
+      };
+
+      return InformationData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch information data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching information data:", error);
     throw error;
   }
 };
