@@ -573,3 +573,74 @@ export const fetchKontakData = async () => {
     throw error;
   }
 };
+
+// Function to fetch revolusi hero section data
+export const fetchRevolusiHeroData = async () => {
+  try {
+    const response = await api.get("/sections/revolusi-hero");
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the RevolusiHero component
+      const RevolusiHeroData = {
+        id: response.data.data[0].id,
+        title: response.data.data[0].title,
+        description: response.data.data[0].description,
+        image: response.data.data[0].image_url,
+      };
+
+      return RevolusiHeroData;
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch revolusi hero data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching revolusi hero data:", error);
+    throw error;
+  }
+};
+
+// Function to fetch revolusi posts data
+export const fetchRevolusiPostsData = async (page = 1, search = "") => {
+  try {
+    // Trim the search query and only include it if it's not empty
+    const searchQuery = search.trim();
+    const url = `/posts?page=${page}${searchQuery ? `&search=${searchQuery}` : ''}`;
+    
+    const response = await api.get(url);
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the RevolusiPosts component
+      return {
+        posts: response.data.data.items.map((item) => ({
+          id: item.id,
+          title: item.title,
+          slug: item.slug,
+          content: item.content,
+          date: item.date,
+          media: item.media.map((media) => ({
+            id: media.id,
+            type: media.type,
+            url: media.url,
+            order: media.order,
+          })),
+        })),
+        pagination: {
+          currentPage: response.data.data.current_page,
+          lastPage: response.data.data.last_page,
+          perPage: response.data.data.per_page,
+          total: response.data.data.total,
+        },
+      };
+    } else {
+      throw new Error(
+        response.data.message || "Failed to fetch revolusi posts data"
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching revolusi posts data:", error);
+    throw error;
+  }
+};
