@@ -179,11 +179,11 @@ const Sorotan = () => {
         className="mt-10 w-full h-full"
       >
         {/* search bar */}
-        <div className="mb-6 flex items-center justify-between">
-          <div className="relative flex justify-center items-center min-w-md">
+        <div className="mb-6 w-full">
+          <div className="relative flex justify-center items-center w-full max-w-xl mx-auto">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
-                className="w-5 h-5 text-gray-400"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -198,13 +198,13 @@ const Sorotan = () => {
             </div>
             <input
               type="search"
-              className="w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border focus:border-0 border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-gold/50"
+              className="w-full pl-10 pr-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-900 bg-gray-50 rounded-lg border focus:border-0 border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-gold/50"
               placeholder="Pencarian ..."
               value={searchQuery}
               onChange={handleSearch}
             />
             {isSearching && (
-              <div className="animate-spin rounded-full h-6 w-6 border-[3px] border-primary-gold border-t-transparent ml-2" />
+              <div className="animate-spin rounded-full h-4 w-4 sm:h-6 sm:w-6 border-[2px] sm:border-[3px] border-primary-gold border-t-transparent ml-2" />
             )}
           </div>
         </div>
