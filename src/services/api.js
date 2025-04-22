@@ -647,6 +647,37 @@ export const fetchRevolusiPostsData = async (page = 1, search = "") => {
   }
 };
 
+// Function to fetch post data by slug
+export const fetchPostDataBySlug = async (slug) => {
+  try {
+    const response = await api.get(`/posts/${slug}`);
+
+    // Check if the request was successful
+    if (response.data.success) {
+      // Transform the data to match the format expected by the Post component
+      const postData = {
+        id: response.data.data.id,
+        title: response.data.data.title,
+        content: response.data.data.content,
+        date: response.data.data.date,
+        media: response.data.data.media.map((media) => ({
+          id: media.id,
+          type: media.type,
+          url: media.url,
+          order: media.order,
+        })),
+      };
+
+      return postData;
+    } else {
+      throw new Error(response.data.message || "Failed to fetch post data");
+    }
+  } catch (error) {
+    console.error("Error fetching post data:", error);
+    throw error;
+  }
+};
+
 // Function to fetch information data
 export const fetchInformationData = async () => {
   try {
