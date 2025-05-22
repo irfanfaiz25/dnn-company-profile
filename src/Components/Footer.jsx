@@ -83,8 +83,9 @@ const Footer = () => {
                 <span className="text-[#009B4A]">NIAGA</span>
               </h4>
             </div>
-            <p className="text-sm text-gray-400"></p>Menjadi mitra terpercaya
-            dalam perdagangan dan distribusi produk tembakau di Indonesia.
+            <p className="text-sm text-gray-400"></p>Menjangkau Nusantara
+            Bersama dalam perdagangan dan distribusi produk tembakau di
+            Indonesia.
           </motion.div>
 
           {/* Contact Info */}
